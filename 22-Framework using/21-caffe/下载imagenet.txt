@@ -1,0 +1,22 @@
+Dataset preparation
+
+The following website gives details of how to obtain the ImageNet dataset and organize the data. https://github.com/amd/OpenCL-caffe/wiki/Instructions-to-create-ImageNet-2012-data
+
+Step 1: Open a bash terminal. Change folder to caffe-jacinto/data/ilsvrc12
+
+Step 2: Execute step 2 in the above link to download the ImageNet image files.
+
+Note: The imagenet download paths in the above page seems to be wrong. The new paths for ILSVRC2012_img_train.tar and ILSVRC2012_img_val.tar can be seen in: https://github.com/tensorflow/models/blob/master/inception/inception/data/download_imagenet.sh
+More details are also available at: http://www.image-net.org/challenges/LSVRC/2012/nonpub-downloads
+
+Step 3: Execute step 3 in the above link to unpack the files and arrange it in proper folders.
+
+Step 4: Execute step 4 in the above link to download the index files train.txt and val.txt, but the name of the script is get_ilsvrc_aux.sh (instead of get_ilsvrc.sh as mentioned in the link)
+
+Step 5: Open a bash terminal and change directory into the caffe-jacinto-models/scripts folder.
+
+Open the file /tools/utils/create_imagenet_classification_lmdb.sh and modify the DATA field to point to the location where ImageNet train and val folders are placed.
+
+Execute the script for creating the lmdb files for ImageNet training. ./tools/utils/create_imagenet_classification_lmdb.sh.
+
+Note: After creating the lmdb database, make sure that ilsvrc12_train_lmdb and ilsvrc12_val_lmdb folders are present in ./data folder. (If they are not there, you can either move them or create soft links there)

@@ -1,0 +1,219 @@
+
+
+()综述
+caffe大致可以分为三层结构blob，layer，net。
+数据的保存，交换以及操作都是以blob的形式进行的，layer是模型和计算的基础，net整和并连接layer。
+
+caffe可以分为三层：Blob、Layer、Net
+Blob是一个四维的数组，用于存储数据，包括输入数据、输出数据、权值；
+Layer层则是神经网络中具体的各层结构，主要用于计算，在根据配置文件初始化网络结构后，前向计算结果，反向更新参数，而它的输入和输出都是Blob数据；
+Net的层就是多个Layer组合而成的有向无环图结构，也就是具体的网络了。
+
+或者说四层结构. 
+Solver : 负责模型的求解 
+Net : 负责定义网络的结构 
+Layer: 负责每一层网络功能的具体实现 
+Blob : 则定义数据，负责数据在每一层之间的流动。
+
+
+I)Blob：
+是Caffe的基本数据结构，具有CPU和GPU之间同步的能力,它是4维的数组(Num, Channels, Height, Width)。
+Blob同时保存了data和diff(梯度)。
+实际上，当GPU出现时，一个将数据从磁盘加载到CPU代码中的一个blob，调用一个设备内核进行GPU计算，并将该Blob转移到下一个层，忽略低级细节，同时保持高级别性能。只要所有层都具有GPU实现，所有中间数据和渐变将保留在GPU中。
+
+blob就是一个图像的数据存储形式（在C++里的vector），其中vector有4个维度，分别为N C H W。 前向为data，反向的偏差为diff。 
+
+主要组成： 
+1.构造（通过Reshape函数） 
+2.Reshape（从其他的Blob 或 从proto文件） 
+3.Copy（从其他的Blob 或 从proto文件） 
+4.data_at 和 diff_at()：获取某个offset处的值
+
+具体的定义函数：
+
+1）include:
+shared_ptr<SyncedMemory>data_;//data数据，指向SyncedMemory的智能指针
+shared_ptr<SyncedMemory>diff_;//表示“差”(梯度数据)，用于更新data_
+
+2）src：
+
+1.Blob():num_(0),channels_(0),height_(0),width_(0),count_(0),data_(),diff_(){}
+功能：简单的初始化,是构造函数
+2.Reshape()可以改变一个blob的大小，分配内存; 
+3.ReshapeLike()为data和diff重新分配一块空间,大小和另一个blob的一样; 
+4.Num_axes()返回的是blob维度的大小（1~4维）; 
+5.Count()计算得到count=num*channels*height*width。 
+
+6.Offset()可得到输入blob数据(n,c,h,w)的偏移量位置; 因为数据在内存是一维数组形式的，所以需要计算偏移量来访问；即((n * channels_+ c) *height_+ h) *width_+ w;
+7.CopyFrom()从source拷贝数据,copy_diff来作为标志区分是拷贝data还是 diff。 调用了memcpy函数
+
+8.FromProto()从proto读数据进来,其实就是反序列化。
+步骤：a.先把blob的大小改变一下; b.得到cpu中数据的地址; c.用proto中的data覆盖blob中的data ;d.用proto中的diff覆盖blob中的diff
+ 
+9.ToProto()序列化，把blob数据保存到proto中。 
+10.ShareDate()/ShareDiff()：从other的blob复制data和diff的值;
+
+
+11.set_cpu_data(Dtype* data) 功能：改变CPU的数据
+
+12.“数据”指针返回函数
+功能：其实这些函数就是调用SyncedMemory的函数，来返回数据的指针
+constDtype*cpu_data()const;调用to_cpu(),返回cpu_ptr，针对data
+constDtype*gpu_data()const;
+constDtype*cpu_diff()const;
+constDtype*gpu_diff()const;
+Dtype*mutable_cpu_data();
+Dtype*mutable_gpu_data();
+Dtype*mutable_cpu_diff();
+Dtype*mutable_gpu_diff();
+
+class SyncedMemory定义了内存分配管理和CPU与GPU之间同步的函数（分配内存和释放内存  ）。Blob会使用SyncedMem自动决定什么时候去copy data以提高运行效率,通常情况是仅当gnu或cpu修改后有copy操作。 
+
+mutable_cpu_data和cpu_data区别：他们之间就相差一个head_ = HEAD_AT_CPU;
+当你想读取数据的时候请使用cpu_data
+当然想修改数据的时候请你使用mutable_cpu_data。
+这样就提示系统数据我改过啦，你要小心了的意思(我只知道数据一定在CPU上)。
+
+
+13.diff_at()和data_at()//从cpu访问数据diff和data
+
+14.函数voidUpdate()
+功能：更新data_的数据，就是减去diff_的数据。利用了math_functions.cpp中的运算。
+包含caffe_axpy和caffe_gpu_axpy，它们两是实现向量减法
+
+
+
+
+
+II)Layer：更具体地说，将实现两个向前和向后功能，一个用于CPU，一个用于GPU；如果没有GPU则很慢（虽然这样省去了GUP与CPU互传的开销）
+
+主要组成：我们主要靠的是layer.h
+以下5大类都是对基类layer.hpp的继承
+common_layers.hpp
+data_layers.hpp
+loss_layers.hpp
+neuron_layers.hpp
+vision_layers.hpp
+
+
+
+具体的定义函数：
+
+1）include
+1.#include "caffe/util/device_alternate.hpp"
+在device_alternate.hpp中，通过#ifdef CPU_ONLY定义了一些宏来取消GPU的调用；
+即device_alternate.hpp这其中只是定义了一些检查CUDA是否运行成功的函数、还有就是定义了几个宏。
+
+2.LayerParameter layer_param_;      // 这个是protobuf文件中存储的layer参数
+3.vector<share_ptr<Blob<Dtype>>> blobs_;        // 这个存储的是layer的参数，在程序中用的
+4.vector<bool> param_propagate_down_;        // 这个bool表示是否计算各个blob参数的diff，即传播误差
+
+5.layer_param_(param)会尝试从protobuf文件读取参数。其三个主要接口（5.6.7.）：
+virtual void SetUp(const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top)
+SetUp函数需要根据实际的参数设置进行实现，对各种类型的参数初始化；
+inline void SetLossWeights :  初始化输出数据的权重
+
+6.inline Dtype Forward(const vector<Blob<Dtype>*>& bottom, vector<Blob<Dtype>*>* top);
+7△.inline void Backward(const vector<Blob<Dtype>*>& top, const vector<bool>& propagate_down, const <Blob<Dtype>*>* bottom);
+Forward和Backward对应前向计算和反向更新，输入统一都是bottom，输出为top，其中Backward里面有个propagate_down参数，用来表示该Layer是否反向传播参数。
+
+8.互斥锁
+void Layer<Dtype>::InitMutex() //初始化互斥量 
+void Layer<Dtype>::Lock()和::Unlock()
+
+9.virtual void ToProto// 把层参数写入到proto文件  
+ 
+10.检查、核对
+  virtual void CheckBlobCounts（） /*检查输入与输出的blobs个数是否正确*/，其中有minbottomblob之类的
+
+
+2）src
+
+在Forward和Backward的具体实现里，会根据Caffe::mode()进行对应的操作，即使用cpu或者gpu进行计算，两个都实现了对应的接口Forward_cpu、Forward_gpu和Backward_cpu、Backward_gpu
+
+
+
+III)net:即.prototxt中的模型。由Net::Init()初始化，包括了创建blob和构建层，它会打印出INFO
+	例如：I0902 22:52:17.932152 2079114000 net.cpp:67] Creating Layer mnist
+I0902 22:52:17.932165 2079114000 net.cpp:356] mnist -> data
+I0902 22:52:17.932188 2079114000 net.cpp:356] mnist -> label
+I0902 22:52:17.932200 2079114000 net.cpp:96] Setting up mnist
+I0902 22:52:17.935807 2079114000 data_layer.cpp:135] Opening leveldb input_leveldb
+I0902 22:52:17.937155 2079114000 data_layer.cpp:195] output data size: 64,1,28,28
+I0902 22:52:17.938570 2079114000 net.cpp:103] Top shape: 64 1 28 28 (50176)
+I0902 22:52:17.938593 2079114000 net.cpp:103] Top shape: 64 (64)
+I0902 22:52:17.938611 2079114000 net.cpp:67] Creating Layer ip
+I0902 22:52:17.938617 2079114000 net.cpp:394] ip <- data
+I0902 22:52:17.939177 2079114000 net.cpp:356] ip -> ip
+I0902 22:52:17.939196 2079114000 net.cpp:96] Setting up ip
+请注意，网络构建的设备是不可知的，即blob和layer在net模型中是隐藏细节的。
+Net用容器的形式将多个Layer有序地放在一起，其自身实现的功能主要是对逐层Layer进行初始化，以及提供Update( )的接口（更新网络参数），本身不能对参数进行有效地学习过程。
+
+
+
+具体的定义函数：
+src：
+1△.Init(const NetParameter& in_param) 功能：初始化网络 
+a.先对整个网络宏观上初始化，即name_，blob_name_to_idx，available_blobs，num_layers定义和导入；
+b.对每一个输入层的blob初始化，比如用blob_pointer指向这块空间等；
+c.对第i层初始化，先压入参数和层名并确定是否反传；再开始产生当前层（分为处理bottom的blob和top的blob两个步骤）,调用了11~13函数。
+d.调用GetLearningRateAndWeightDecay函数，得到solver参数
+
+2.Forward(const vector<Blob<Dtype>*> & bottom, Dtype* loss) 
+功能：把网络输入层的blob读到net_input_blobs_，然后进行前馈，计算出loss 
+前传是：根据参数文件的字符串到层的注册表中获取层的Creator函数，然后创建层的实例，然后压入到layers_，然后再把对应的层的名字压入到layer_name。就是各种压入， solver中获取层，然后压入到layers_容器 ，和将层的名字压入到layer_names_  
+
+3.Backward() 
+功能：对整个网络进行反向传播
+反传是：根据学习率来决定，如果学习率是0则表示该层不需要反传。
+与前传对应，这样就形成了一个DAG，用户自己定义。
+
+4.ShareTrainedLayersWith(Net* other) 
+功能：从Other网络复制某些层 
+类似功能的还有CopyTrainedLayersFrom(const NetParameter& param) 和CopyTrainedLayersFrom(const string trained_filename)，CopyTrainedLayersFrom()调用FromProto函数把源层的blob赋给目标层的blob。
+
+5.ToProto(NetParameter* param, bool write_diff) 
+功能：把网络的参数存入prototxt中 
+步骤： 
+a. 设置网络的名字：param->set_name(name_) 
+b. 加入输入层blob的名字 
+c. 对于第i层：加入bottom的blob的名字;加入top的blob的名字;写到proto中
+
+6.Update() 
+功能：更新params_中blob的值
+
+7.has_blob(const string& blob_name) 
+功能：判断是否存在名字为blob_name的blob
+blob_by_name(const string& blob_name) 
+功能：给一个blob的名字，返回这个blob的指针
+
+has_layer(const string& layer_name) 
+功能：判断是否存在名字为layer_name的layer
+layer_by_name(const string& layer_name) 
+功能：给一个layer的名字，返回这个layer的指针
+
+
+8.ForwardPrefilled(Dtype* loss) 
+功能：前馈预先填满，即预先进行一次前馈 
+
+
+9.FilterNet()给定当前phase/level/stage，移除指定层  
+
+10.LayerRegistry::CreateLayer工厂模式new出网络层对象
+
+11.AppendBottom();
+此函数为该层创建bottom blob，由于网络是堆叠而成，即：当前层的输出 bottom是前一层的输出top blob，因此此函数并没没有真正的创建blob，只是在将前一层的指针压入到了bottom_vecs_中。
+
+12.AppendTop();
+此函数为该层创建top blob，该函数真正的new的一个blob的对象。并将topblob 的指针压入到top_vecs_中
+
+13.AppendParam();
+ 对于某些有参数的层，例如：卷基层、全连接层有weight和bias。该函数主要是修改和参数有关的变量，实际的层参数的blob在上面提到的setup()函数中已经创建。如：将层参数blob的指针压入到params_。调用了模板类Layer的layer_param方法
+
+14.GetLearningRateAndWeightDecay() 
+功能：收集学习速率和权重衰减，即更新params_、params_lr_和params_weight_decay_ ；也即solver中的参数导入。
+
+
+
+
+IV）Solver：这个类中包含一个Net的指针，主要是实现了训练模型参数所采用的优化算法，它所派生的类就可以对整个网络进行训练了。

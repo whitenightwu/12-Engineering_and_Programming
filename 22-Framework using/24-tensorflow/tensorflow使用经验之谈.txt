@@ -1,0 +1,22 @@
+	经验与反思：	
+1）要相信Tensorflow本身的功能十分强大，当发现tensorflow中没有所需要的功能时，再找找看，尤其是在github上找；	
+2）当确认所需要的功能有必要自己实现时，按照tensorflow的模式来，尽量不要另起炉灶。这里所说的模式是不单指代码上，还指功能上。	
+tf各个模块的解耦合性很强。例如，按照tf的规范，如果使用不同的量化方法，那么应该在源码中实现，而不是在transform中实现。
+
+动手之前要确认
+
+tensorflow的安装；虚拟环境的配置；tensorflow的slim学习；tensorflow的量化学习（fake、mobile与tflite）；tensorflow的常规使用；tensorflow的tools(包括tensorboard等)
+
+
+随机数的设置
+
+np.random.seed(seed=args.seed)
+
+tf.set_random_seed(args.seed)
+
+nrof_preprocess_threads = 1
+要保证线程数为1！
+
+
+	从对Tensorflow一窍不通，到了解Tensorflow的整个量化流程，并能进行修改。
+虽然项目已经结束了，但除了量化模块以外，tensorflow中还有更多模块等待着发掘。

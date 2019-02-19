@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 | 雷锋网</title>
+    <meta itemprop="image" content="https://www.leiphone.com/resWeb/images/common/metaLogo.jpg">
+            <link rel="dns-prefetch" href="https://www.leiphone.com/">
+        <link rel="dns-prefetch" href="https://home.leiphone.com/">
+        <link rel="dns-prefetch" href="https://m.leiphone.com/">
+        <link rel="dns-prefetch" href="https://leiphone.com/">
+        <meta name="baidu-site-verification" content="qBnDqyynv4">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2018-09-24T18:04:29+08:00">
+    <meta property="article:author" content="刘肉酱">
+    <meta property="article:published_first" content="雷锋网, https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html">
+    	<meta name="google-site-verification" content="4c2S0LRoSpcyGiNmASqakMSa7yVC9C8Jnu-IRNyq5oU">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=1">
+    <meta property="qc:admins" content="10002525706451007656375">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="https://m.leiphone.com/">
+            	<meta name="keywords" content="神经网络,人工智能,TPU,谷歌,摩尔定律">
+	<meta name="description" content="David Patterson认为深度神经网络加速的特定领域架构将成为未来主流，随着制程提升的困难，通用计算芯片现在每年的提升仅有 3%，性能很难翻倍。">
+    <meta name="sogou_site_verification" content="ilkqV8FehD">
+    <meta name="renderer" content="webkit">
+	<link rel="cannoical" href="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html">    <link rel="stylesheet" type="text/css" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/common.css" media="all">
+    <script type="text/javascript" async="" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/cmp.api"></script><script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/push.js"></script><script async="" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/gtm.js"></script><script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/hm.js"></script><script type="text/javascript">
+        window.mobilecheck = function() {
+            
+            // var ua=window.navigator.userAgent;
+            // if(ua.indexOf('iPhone')>=0||ua.indexOf('iPod')>=0||ua.indexOf('ndroid')>=0){
+            //     return true;
+            // }
+
+            var check = false;
+            (function(a,b){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+            return check;
+        }
+        var check = mobilecheck();
+        if(check && (window.location.host == 'www.leiphone.com')){
+            window.location.href="//m.leiphone.com" + window.location.pathname + window.location.search;
+        }else if(!check && (window.location.host == 'm.leiphone.com')){
+            window.location.href="//www.leiphone.com" + window.location.pathname + window.location.search;
+        }
+    </script>
+    <!--  
+	<script type='text/javascript'>window.BWEUM||(BWEUM={});BWEUM.info = {"stand":true,"agentType":"browser","agent":"bi-collector.oneapm.com/static/js/bw-send-411.4.5.js","beaconUrl":"bi-collector.oneapm.com/beacon","licenseKey":"fqiyF~7R36YyFnEB","applicationID":2284957};</script><script type="text/javascript" src="//bi-collector.oneapm.com/static/js/bw-loader-411.4.5.js"></script>
+	-->
+    <script>
+                    //百度统计开始
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?0f7e8686c8fcc36f05ce11b84012d5ee";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+            //百度统计结束
+        
+        var SCRIPT_URL 	= "https://www.leiphone.com/";
+		var BASE_URL 	= "https://www.leiphone.com/";
+		var HOME_URL 	= "https://home.leiphone.com/";
+		var IS_LOGIN 	= "1";
+        var LEIPHONE_HOME_URL = USER_CENTER  = "https://home.leiphone.com/";
+        var HAITAO_URL  = "https://haitao.leiphone.com";
+        var TRYOUT_URL  = "https://tryout.igao7.com/";
+        var PRODUCT_URL = "https://product.igao7.com/";
+	</script>
+
+	<!--[if IE]>
+    <script>
+       (function(){var e="abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');var i=e.length;while(i--){document.createElement(e[i])}})()
+    </script>
+    <![endif]-->
+
+    <!--<script src="/resWeb/js/libs/sea.js"></script>-->
+    <script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/jquery-sea.js"></script>
+    <script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/tips.js"></script><link rel="stylesheet" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/tips.css">
+    <script>
+        seajs.config({
+            map:[
+                ['.js','.js?20180515']
+            ]
+        });
+        seajs.use('https://www.leiphone.com/resWeb/js/common/global',function(){
+                    });
+        document.domain = "leiphone.com";
+         // 英鹏账号登录回调
+        function yingpengIslogin_callback(){
+            seajs.use('https://www.leiphone.com/resWeb/js/common/com_login',function(user) {
+              user.init();
+            });
+        }
+    </script>
+
+<script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/share.js"></script><script src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/yp_login.js"></script><link rel="stylesheet" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/yp_login.css"><link rel="stylesheet" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/share_style0_24.css"></head>
+<body>
+<!-- 顶栏广告位 -->
+<div class="top-banner" style="display: block;">
+    <a href="https://www.leiphone.com/banner/updateClickNum/id/1408" target="_blank" title="智能驾驶峰会">
+        <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5ba9aab73f139.jpg" alt="智能驾驶峰会">
+    </a>
+    <em class="closeBanner"></em>
+</div>
+
+<div class="explorer" id="low-explorer">
+    <div class="inner">
+        <em class="warn ico"></em>
+        <span>您正在使用IE低版浏览器，为了您的雷锋网账号安全和更好的产品体验，强烈建议使用更快更安全的浏览器</span>
+        <span class="ico exp-ico1"></span>
+        <span class="ico exp-ico2"></span>
+        <span class="ico exp-ico3"></span>
+        <span class="ico exp-ico4"></span>
+        <span class="ico exp-ico5"></span>
+    </div>
+</div>
+<!--[if lte IE 8]>
+    <script>
+       (function(){var e=['abbr', 'article', 'aside', 'audio', 'canvas', 'datalist', 'details', 'dialog', 'eventsource', 'figure', 'footer', 'header', 'hgroup', 'mark', 'menu', 'meter', 'nav', 'output', 'progress', 'section', 'time', 'video'];for(var i = e.length; i--;) document.createElement(e[i])})()
+
+       //低版本浏览器
+        document.getElementById("low-explorer").style.display = 'block';
+
+    </script>
+<![endif]-->
+
+
+
+<!-- header start-->
+<header class="yp-header">
+    <div class="yp-header-top clr">
+        <a class="yp-header-logo" href="https://www.leiphone.com/">
+            <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/lph-headerlogo.png" alt="雷锋网">
+                        <span>读懂<em>智能</em>&amp;未来</span>
+        </a>
+        <!-- navi -->
+
+        <div class="yp-header-menu">
+            <ul>
+                <li class="first">
+                    <a href="https://www.leiphone.com/" class="sub_a">首页</a>
+                </li>
+                <li>
+                    <a href="http://www.gair.link/" target="_blank" class="sub_a">AI研习社<em class="newIcon"></em></a>
+                </li>
+                <li>
+                    <a href="https://www.leiphone.com/AiWeights" target="_blank" class="sub_a">AI影响因子</a>
+                </li>
+                <li>
+                    <a href="https://www.leiphone.com/events" class="sub_a">活动</a>
+                </li>
+                <li>
+                    <a href="https://www.leiphone.com/specials" class="sub_a">专题</a>
+                </li>
+                <li>
+                    <a href="https://www.leiphone.com/specialEdition/list" target="_blank" class="sub_a">精选</a>
+                </li>
+                <li class="borleft aiB" style="">
+                <div class="line"></div>
+                    <!-- <a href="http://www.mooc.ai/?f=leiphone"  target="_blank" class="sub_a">AI慕课学院</a> -->
+                </li>
+                <li class="ej borleft ig">
+                    <a href="http://www.igao7.com/" target="_blank" class="sub_a">爱搞机</a>
+                                    </li>
+                <!-- <li  class="ej borleft ig">
+                    <a href="https://haitao.leiphone.com" class="sub_a">极客购</a>
+                </li> -->
+            </ul>
+            <a href="javascript:;" class="contribute"><em></em>申请专栏作者</a>
+        </div>
+        <!-- 用户登录 -->
+        <div class="yp-header-user-box">
+            <div class="yp-header-user"><input type="hidden" id="is_login_tag_status" value="0"><div class="user-main"><div class="avatar"><a href="https://home.leiphone.com/login/wechatLogin"><img width="36" height="36" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/noLogin.png" alt=""></a></div></div></div>
+        </div>
+        <!-- 用户消息 -->
+        <div class="yp-header-message">
+            <a href="https://home.leiphone.com/notices" class="bell">
+                 <i class="ico"></i>
+                 <em class="count"></em>   
+            </a>
+        </div>
+        <div class="yp-header-search">
+           <form method="GET" name="allSearchForm" action="https://www.leiphone.com/search" style="height: 100%;">
+                <input type="hidden" name="site" value="">
+                <input class="text" type="text" name="s" autocomplete="off" value="">
+                <input class="submit" type="submit" value="">
+                <input class="submit2" type="submit" value="">
+            </form>
+        </div>
+        <a href="https://www.leiphone.com/search" class="miniSearch"></a>
+        
+    </div>
+</header>   
+<!-- header end-->
+<nav class="yp-secNav">
+    <div class="wrapper">
+        <a href="https://www.leiphone.com/category/sponsor" class=" ">业界</a>
+        <a href="https://www.leiphone.com/category/ai" class=" ">人工智能</a>
+        <a href="https://www.leiphone.com/category/transportation" class=" ">智能驾驶</a>
+        <a href="https://www.leiphone.com/category/aijuejinzhi" class=" ">AI+</a>
+        <a href="https://www.leiphone.com/category/fintech" class=" "> Fintech&amp;区块链</a>
+        <a href="https://www.leiphone.com/category/aihealth" class=" ">未来医疗</a>
+        <a href="https://www.leiphone.com/category/letshome" class=" ">网络安全</a>
+        <a href="https://www.leiphone.com/category/arvr" class=" ">AR/VR</a>
+        <a href="https://www.leiphone.com/category/robot" class=" ">机器人</a>
+        <a href="https://www.leiphone.com/category/yanxishe" class=" ">开发者</a>
+        <a href="https://www.leiphone.com/category/weiwu" class=" ">智能硬件</a>
+        <a href="https://www.leiphone.com/category/iot" class=" ">物联网</a>
+        <a href="https://gair.leiphone.com/?from=leifengwang2018" target="_blank" class="">GAIR</a>
+    </div>
+</nav>
+
+<link rel="stylesheet" type="text/css" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/artCont_web_admin.css">
+<link rel="stylesheet" type="text/css" href="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/main.css" media="all">
+<script type="text/javascript">
+    var ARTICLE_CATEGORY = '132';
+    var ADMIN_URL = 'https://yingpeng.leiphone.com/';
+</script>
+
+<div class="wrapper">
+    <div class="lph-Nowsite clr">
+        <a href="https://www.leiphone.com/"><em class="ico"></em></a>
+        <em class="arro"></em>
+        <a href="https://www.leiphone.com/category/ai">人工智能</a>
+        <em class="arro"></em>
+        <a href="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html#">正文</a>
+    </div>
+</div>
+
+<!-- 发送私信 -->
+<div class="sendMsg-pop">
+    <a href="javascript:;" class="closePop"><em></em></a>
+    <div class="title">发私信给<span>刘肉酱</span></div>
+    <div class="main">
+        <textarea placeholder="私信内容"></textarea>
+    </div>
+    <div class="btns">
+        <a href="javascript:;" class="send-button">发送</a>
+    </div>
+</div>
+<!-- 评论数 -->
+<a href="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html#lph-comment-179126" class="cmtNums">
+    <em></em>
+    <p>0</p>
+</a>
+<div class="lph-overlay"></div>
+<!-- 当载入markdown的时候加载 -->
+<script type="text/javascript">
+    var link = "dDheR8Wdh0dH3Q95";
+</script>
+<!-- 文章详情页 -->
+<div class="lphArticle-detail" data-article_url="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html" data-article_id="179126" data-article_unique="dDheR8Wdh0dH3Q95" data-article_seo_title="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 | 雷锋网" data-article_seo_keywords="神经网络,人工智能,TPU,谷歌,摩尔定律" data-article_seo_description="David Patterson认为深度神经网络加速的特定领域架构将成为未来主流，随着制程提升的困难，通用计算芯片现在每年的提升仅有 3%，性能很难翻倍。" data-comment_type="2" data-collect_type="2" data-author_id="24040" data-author_name="刘肉酱" data-article_cmtnum="0">
+    <div class="article-template">
+        <div class="article-title">
+            <div class="inner">
+                <h1 class="headTit">
+                    为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅                </h1>
+                <div class="msg">
+                    <table>
+                        <tbody><tr>
+                            <td class="aut">
+                                本文作者：<a href="https://www.leiphone.com/author/liuroujiang3232" target="_blank" rel="nofollow">刘肉酱</a>
+                            </td>
+                                                        <td class="td-edit">
+                                编辑：<a href="javascript:void(0)" rel="nofollow">杨晓凡</a>
+                            </td>
+                                                        <td class="time">
+                                2018-09-24 18:04                            </td>
+                                                                                    <!-- <td class="tags">
+                                <em></em> -->
+                                                                                                                            <!-- </td> -->
+                                                      <!--   <td class='cmtNum'>
+                                <a href="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html#lph-comment-179126">0条评论</a>
+                            </td> -->
+                        </tr>
+                    </tbody></table>
+                </div>
+                <div class="article-lead">
+                    <em></em>导语：David Patterson认为深度神经网络加速的特定领域架构将成为未来主流，随着制程提升的困难，通用计算芯片现在每年的提升仅有 3%，性能很难翻倍。                </div>
+            </div>
+        </div>
+        <div class="info">
+            <div class="wrapper clr">
+                <div class="article-left">
+                     <div class="lph-article-comView">
+                                                 
+                         <!-- AI影响因子 -->
+                        <!-- xhBPeYDbNuuRZkwy -->
+                                                <!-- AI影响因子 -->
+                        <!-- 正文内容 -->
+                        <p style="text-align: left;">雷锋网 AI 科技评论按：ACM 通讯（ACM Communications）在线杂志近期刊登了一篇作者来自谷歌的文章，带领我们重新审视了近几十年的半导体发展历程，以及 AI 研究、应用人员们如今已经接受了的问题：专用处理器为什么好、为什么火起来。值得注意的是，这篇文章的作者之一正是谷歌 TPU 团队成员、UC 伯克利大学退休教授、2017 年图灵奖获得者&nbsp;David Patterson。雷锋网 AI 科技评论全文编译如下。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" href="//static.leiphone.com/uploads/new/article/740_740/201705/591d7515a8e53.jpg" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/591d7515a8e53.jpg"></p><h5 style="text-align: center;">装满了 TPU 的谷歌云服务器机架</h5><p>摩尔定律的终结将使服务于特定领域的架构成为计算的未来。一个开创性的例子就是谷歌在 2015 年推出的张量处理单元（TPU），目前已经在为超过十亿人提供服务。TPU 使深度神经网络（DNN）的计算速度提高了 15-30 倍，能耗效率比类似技术下的当代 CPU 和 GPU 高出了 30-80 倍。<br></p><h3><span style="color: #C0504D;"><strong>核心观点</strong></span></h3><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>虽然 TPU 是一种专用集成电路，但它运行的程序来自 TensorFlow 框架下的神经网络，驱动了谷歌数据中心的许多重要应用，包括图像识别、翻译、搜索和游戏。</p></li><li><p>通过专门为神经网络重新分配芯片计算资源，TPU 在真实数据中心负载环境下效率要比通用类型的计算机高 30-80 倍，目前已为全球 10 亿人提供日常服务。</p></li><li><p>神经网络的推理阶段通常会有严格的响应时间要求，这降低了通用计算机所使用技术的有效性；通用计算机通常运行得较快，但某些情况下也会较慢。</p></li></ul><h3><span style="color: #C0504D;"><strong>所有指数增长都将有结尾</strong></span></h3><p>1965 年，据英特尔创始人之一的 Gordon Moore 预测，芯片中的晶体管数量每一两年都会增加一倍。尽管 2017 年 1 月的 ACM 通讯封面呼吁道：“担心我会终结简直是杞人忧天”，摩尔定律确实还是寿终正寝了。2014 年推出的 DRAM 芯片包含了 80 亿个晶体管，而在人们的预测中即使到了 2019 年，带有 160 亿个晶体管的 DRAM 芯片也不会大规模生产，但根据摩尔定律的预测，四年里晶体管数量应该变成四倍多。2010 年款的英特尔至强 E5 处理器拥有 23 亿个晶体管，而 2016 年的至强 E5 也只有 72 亿个晶体管，或者说比摩尔定律预计的数值低 2.5 倍——显然，<strong>纵使半导体行业还在进步，但其脚步已十分缓慢</strong>。</p><p>Dennard Scaling 是一个鲜为人知，但同样重要的观察结果。Robert Dennard 在 1974 年认为，晶体管不断变小，但芯片的功率密度不变。如果晶体管尺寸线性缩小两倍，那么同样面积上芯片中晶体管的数量就会变为 4 倍。同时，<strong>如果电流和电压都降低了二分之一，它所使用的功率将下降 4 倍，在相同的频率下提供相同的功率</strong>。Dennard Scaling 在被发现的 30 年后结束，其原因并不是因为晶体管的尺寸不再缩小，而是因为<strong>电流和电压不能在继续下降的同时保持可靠性了</strong>。</p><p>计算架构师们一直笃定摩尔定律和 Dennard Scaling，并通过复杂的处理器设计和内存层次结构，将资源转化为性能，这些设计利用了不同的处理指令的之间的并行性，但架构师们并没有什么编程的知识。ε=(´ο｀*))) 唉，于是架构师们最终还是再也找不到新的办法可以利用指令级别的并行性。Dennard Scaling在 2004 年终结了，祸不单行的是继续提升指令级别并行性的方法也开始缺席，这迫使业界只能从单核高耗能处理器转换到多核高效率处理器。</p><p>今天我们仍然遵守吉恩·阿姆达尔（IBM 著名工程师，阿姆达尔定律的提出者）在 1967 年提出的定律，该定律认为不断增加处理器数量会导致性能提升的递减。阿姆达尔定律说，并行计算的理论加速受到任务顺序部分的限制；<strong>如果任务的 1/8 是串行的，则最大加速也只比原始性能高 8 倍</strong>——即使任务的其余部分很容易并行，并且架构师增加了 100 个处理器也是如此。</p><p>下图显示了过去四十年以来，上述三大定律对处理器性能的影响。按照目前的速度，标准处理器的性能在 2038 年以前都不会再次翻倍。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92564f9f1c5.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">图 1. 依照Hennessy和Patterson的理论，我们绘制了过去40年中，32位和64位处理器内核每年最高的SPECCPUint性能；面向吞吐量的SPECCPUint_rate反映了类似的情况，即使其平稳期延迟了几年</span></p><p>晶体管看来没什么进步空间了（这反映了摩尔定律的结束），而每平方毫米芯片面积的功耗正在增加（毕竟 Dennard Scaling 也结束了），但人们对于芯片的功率预算却并没有增加（因为电子的移动、机械和发热限制），芯片设计师们已经在充分发挥多核心的能力了（但这也受到阿姆达尔定律的限制），架构师们现在普遍认为，<strong>能显著改进性能、价格、能源三者平衡的唯一途径就是特定领域的架构——它们只适用于处理几种特定的任务，但效率非常高</strong>。</p><p>在云端的大型数据集和大量计算机之间的协作使得机器学习近年来有了很大的进步，特别是在深度神经网络（DNN）方面。与一些其他领域不同，DNN 的应用方式很广泛。DNN 的突破性进展包括将语音识别的单词错误率相比老方法降低了 30%，这是近 20 年来最大的单次提升；自 2011 年以来，将图像识别的错误率从 26% 降低至 3.5%；在围棋上击败了人类世界冠军；改进了搜索排名等等。单个 DNN 架构或许应用范围很窄，但这种方法仍然催生出了大量实际应用。</p><p>神经网络类似于人脑中神经的功能，基于简单的人工神经元，它们是输入的加权和的非线性函数，例如 max(0,value)。这些人工神经元被分为许多不同的层，其中一层的输出就会作为下一层的输入。深度神经网络中的“深层”代表有多个层，由于云上有极大的数据集，只需换用更大、更多的层就可以构建出更准确的模型，它也就可以获取更高阶抽象的模式或是概念，而 GPU 可以提供足够的计算能力帮我们开发 DNN。</p><p>DNN 运行的两个阶段被称为训练（或学习）和推理（或预测），分别指代开发与生产。训练一个 DNN 可能需要数天，但训练好的 DNN 进行推理只需要几毫秒。针对不同的应用，开发者需要选择神经网络的类型和层数，而训练过程会决定网络中的权重。几乎所有的训练都是浮点运算，这就是 GPU 在深度学习时代如此受欢迎的原因之一。</p><p>被称为“量化”的转换将浮点型转为整型，整型通常只有 8 位——这种程度通常足以满足推理的要求了。与 IEEE 754 16 位浮点乘法相比，8 位整型乘法只需要 1/6 的能耗，需要的空间也只需要 1/6，而转换为整型加法也能带来 13 倍能耗和 38 倍空间的提升。</p><p>下表展示了两个例子，共三类、六个 DNN 实例的运行效率——这代表了谷歌数据中心 2016 年 95% 的深度神经网络推理工作负载，我们把它们作为 benchmark。它们在 TensorFlow 中的代码都非常短，只有 100-1500 行。这些例子是主服务器上运行较大应用程序中的小组件，这些大应用可能会由数千到数百万行 C++代码构成。应用程序通常面向用户，这就对响应时间带来了严格的要求。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565150e21.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">表 1. 2016年7月，谷歌TPU上的DNN工作负载。共六种DNN应用（三种DNN类型），代表95%的TPU工作负载</span></p><p>如表 1 所示，每个模型需要 500 万至 1 亿个权重，即便只是访问这些权重都需要花费大量时间和能耗。为了降低访问成本，在训练或者推理中会针对一批完全不相干的输入样本都使用同样的权重，这种做法可以提高性能。</p><h3><span style="color: #C0504D;"><strong>TPU 起源、架构及实现</strong></span></h3><p>早在 2006 年，谷歌就开始考虑在其数据中心部署 GPU（图形处理器），或者 FPGA （field programmable gate array，现场可编程门阵列），或者专用集成电路（ASIC）。当时的结论是，能在专门的硬件上运行的应用并不多，它们使用谷歌大型数据中心的富余计算能力即可，基本可以看做是免费的，另外也很难不怎么花钱就带来很大改进。情况在 2013 年出现了变化，当时谷歌用户每天使用语音识别 DNN 语音搜索三分钟，使得谷歌数据中心的计算需求增加了一倍，而如果使用传统的 CPU 将非常昂贵。因此，谷歌启动了一项优先级别非常高的项目，快速生产一款定制芯片用于推理，并购买现成的 GPU 用于训练。谷歌的目标是将性价比提高 10 倍。为了完成这项任务，<strong>谷歌在其数据中心设计、验证、构建并部署了 TPU，而这一过程仅仅用了 15 个月</strong>。</p><p>为了降低部署推迟的风险，谷歌工程师将 TPU 设计成 I/O 总线上的协处理器，并允许它像 GPU 一样插入现有服务器，而不是使 TPU 与 CPU 紧密集成。此外，为了简化硬件设计和调试，主机服务器将指令发送给 TPU 令其执行，而不是让 TPU 去自行获取。因此，TPU 在理念上更接近浮点单元（FPU）协处理器，而不是 GPU。</p><p>谷歌工程师将 TPU 看做一个系统进行优化。为了减少与主机 CPU 的交互，TPU 运行整个推理模型，但提供了与 2015 年及以后的 DNN 相匹配的灵活性，而不局限于 2013 年的 DNN。</p><p>图 2：TPU 的架构示意图。TPU 指令通过 PCI-e Gen3x16 总线从主机被发送到指令缓冲器中。内部计算模块通常通过 256 字节宽度的路径连接在一起。对于右侧的芯片布局图，从右上角开始，矩阵乘法单元是 TPU 的核心，256×256 MAC 可以对有符号或无符号的整型执行 8 位乘法和加法运算。得到的 16 位的结果会存入矩阵计算单元下方的共 4MB 空间的 32 位累加器中。这四个 MiB 代表含有 4,096 个 256 元素的 32 位累加器。矩阵计算单元每周期产生一个 256 元素的部分和。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565349a32.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">图 2. TPU架构示意图及芯片布局图</span><br></p><p>矩阵单元的权重通过片内「权重 FIFO」来分级，该 FIFO 从我们称之为「权重存储器」的片外 8GB DRAM 中读取；对于推理，权重仅作读取；8GB 空间可以支持同时激活多个模型。权重 FIFO 有四层深。中间结果保存在 24MiB 的片上「统一缓冲器」中，可以作为矩阵计算单元的输入。可编程 DMA 控制器会z z哎CPU 主机存储器和统一缓冲器间传送数据。为了能在谷歌的规模上可靠地部署，内存储器和外存储器包含内置错误检查与纠正硬件。</p><p>TPU 微架构的原理是保持矩阵计算单元一直在工作中。为了实现这一目标，读取权重的指令遵循解耦访问/执行原理，它可以在发送权重的地址之后、但从权重存储器中取出权重之前完成一条指令。如果输入激活或权重数据没有准备好，矩阵计算单元将停止。</p><p>由于读取大型静态随机存取存储器（Static Random-Access Memory，SRAM）消耗的能源比数学运算多得多，矩阵单元使用「脉动执行」通过减少统一缓冲器的读写来节约能量。来自不同方向的数据以规律的间隔到达阵列中的单元，然后进行组合计算。一个含有 65,536 个元素的向量-矩阵乘法运算作为对角波前在矩阵中移动。这些权重被预加载，并随着新数据块的第一个数据一起随着前进波生效。控制和数据被流水线化，给程序员一种错觉，仿佛 256 个输入是一次读取的，并立即更新 256 个累加器中每个累加器的一个位置。从正确性的角度来看，软件不了解矩阵单元的脉动特性，但为了提高性能，必须考虑单元的延迟。</p><p>TPU 软件栈必须与为 CPU 和 GPU 开发的软件栈兼容，这样应用可以快速移植到 TPU 上。在 TPU 上运行的应用部分通常用 TensorFlow 编写，并编译成可以在 GPU 或 TPU 上运行的 API。</p><h3><span style="color: #C0504D;"><strong>CPU、GPU、TPU 平台</strong></span></h3><p>多数体系架构研究的论文基于运行小型、易于移植的基准测试模拟，这些基准测试可以预测潜在的性能（如果实现的话）。本文与上述论文不同，是对 2015 年以来数据中心运行真实、大型生产工作负载的机器进行回顾性评估，其中一些机器的日常用户超过 10 亿。表 1 中列出的六种应用代表了 2016 年 TPU 数据中心 95% 的使用。</p><p>由于测量的是生产环境的负载，要比较的基准平台必须可以在 Google 数据中心部署，因为生产环境的计算负载也就只能在这里运算。谷歌数据中心的很多服务器和谷歌规模对应用程序可靠性的要求意味着机器必须至少检查内存错误。由于英伟达 Maxwell GPU 和最近的 Pascal P40 GPU 不检查内部存储中的错误，以谷歌的规模部署这些处理器、同时还满足谷歌应用程序的严格可靠性要求是做不到的。</p><p>表 2 显示了部署在谷歌数据中心的服务器，可以将其与 TPU 进行比较。传统的 CPU 服务器以英特尔的 18 核双插槽 Haswell 处理器为代表，该平台也是 GPU 或 TPU 的主机服务器。谷歌工程师在服务器中使用了四个 TPU 芯片。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b925654d13f6.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">表 2. 基准测试的服务使用Haswell CPU、K80 GPU及TPU</span></p><p>很多计算机架构师没有考虑到从产品发布到芯片、主板、软件可以服务于数据中心的用户之间的时间差。表3指出，2014 年至 2017 年间，<strong>商业云公司的 GPU 时间差为 5 至 25 个月</strong>。因此，当时适合与 2015 年投入使用的 TPU 的做对比的 GPU 显然是英伟达 K80，后者处于相同的半导体工艺中，并在 TPU 部署前六个月发布。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565a592d3.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">表 3.2015年到2017年，英伟达GPU从发布到云端部署的时间差距，这4代GPU分别为Kepler、Maxwell、Pascal和Volta架构</span></p><p>每个 K80 卡包含两块硅片，并提供内部存储器和 DRAM 的错误检测和纠错功能。这种服务器中最多可安装 8 个 K80 硅片，这也是我们基准测试的配置。CPU 和 GPU 都使用大型芯片：大约 600 mm2的芯片面积，大约是英特尔 Core i7 的三倍。</p><h3><span style="color: #C0504D;"><strong>性能：Roofline、响应时间、吞吐量</strong></span></h3><p>为了说明这六种应用在三类处理器上的性能，我们使用了高性能计算机群（HPC）的 Roofline 性能模型。这一简单的视觉模型虽然不完美，但揭示了性能瓶颈出现的原因。该模型背后的假设是应用需求的计算无法完全装入片上缓存，因此它们要么计算受限，要么内存带宽受限。对于 HPC，y 轴表示每秒浮点运算性能（单位是 FLOPS），因此峰值计算率形成了 roofline 图的“平缓”区。x 轴表示运算密度（operational intensity），单位是 FLOPS/byte。内存带宽表示每秒多少比特，形成了 roofline 的“倾斜”部分，因为 (FLOPS/sec)/ (FLOPS/Byte) = Bytes/sec。没有充足的运算密度时，程序受限于内存带宽，性能只能在 roofline 的“倾斜”部分之下。</p><p>一个应用的每秒实际计算量与其天花板计算量之间的距离代表了保持运算密度不变时性能提升的潜力；提升运算密度的优化（如缓存分块）可能带来更大的性能提升。</p><p>为了在 TPU 上使用 Roofline 模型，当DNN应用被量化时，我们首先将浮点运算替换成整数运算。由于 DNN 应用的权重通常无法装入片上内存，因此第二个改变就是将运算密度重新定义为每读取 1 字节的权重值时的整数乘积累加运算操作数目，如表1所示。</p><p>图 3 展示了单个 TPU、CPU 和 GPU 硅片以 Roofline 模型评估的性能指标，图中是指数坐标。TPU 的 Roofline 模型“倾斜”部分较长，从计算密度角度考虑，这意味着性能更多地受限于内存带宽，而不是计算能力峰值。六个应用中有五个都接近天花板，<strong>MLP 和 LSTM 受限于内存，CNN 受限于计算</strong>。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565babaca.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">图 3：TPU、CPU和GPU在 Roofline 模型上的性能表现。五角星表示TPU，三角形表示英伟达Tesla K80 GPU，圆表示英特尔酷睿处理器（Haswell）；所有TPU五角星都与其他两种芯片的 Roofline 模型持平或在后者之上</span></p><p>如图 3 所示，在 Haswell 以及 K80 上，这六个 DNN 应用距离 Roofline 天花板的距离都大于 TPU 上的距离。响应时间是原因所在。这些应用中的很多个是面向终端用户服务的一部分。研究表明，即使响应时间的些微增加都会导致用户使用该服务的频率降低。训练可能没有苛刻的响应时间 deadline，但推理通常有，或者说相比于选择更大吞吐量，推理任务更偏好低延迟。</p><p>例如，按照应用开发者的要求，<strong>MLP0 应用要求在 99% 的时间内响应时间不大于 7ms</strong>。（每秒完成推理的数目要求和 7ms 的延迟要求中包括服务器主机时间和加速器时间）即便对响应时间的限制放宽一些，Haswell 和 K80 运行时也分别只能达到 MLP0 应用最高吞吐量的 42% 和 37%。这些限制也会影响到TPU，它会以 80% 的吞吐量来运行，更加接近 TPU 的 MLP0 最大吞吐量。与 CPU 和 GPU 相比，单线程 TPU 没有复杂的微架构特征，也就不需要为平均状况而消耗晶体管和功率来提高性能，它直接适用于 99% 的状况，即 TPU 没有缓存、分支预测、乱序执行、多处理、推测预读、地址合并、多线程、上下文切等等。极简是领域专用处理器的优势。</p><p>表 4 显示了每个芯片的相对推理性能底线，包括两个加速器 vs. CPU 的主机服务器开销，展示了这六个 DNN 应用相对性能的加权平均值，表明 K80 芯片速度是 Haswell 的 1.9 倍，TPU 芯片速度是 Haswell 的 29.2 倍，TPU 芯片速度也就是 GPU 的 15.3 倍。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565dd7509.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">表 4：在 DNN 工作负载下 K80 GPU 芯片和 TPU 芯片与 CPU 的性能比。加权平均值使用了表 1 中六个 app 的实际混合</span></p><h3><span style="color: #C0504D;"><strong>性价比、全周期成本（TCO）、性能／功耗</strong></span></h3><p>大批量购买计算机时会更多地考虑性价比而非性能。数据中心最好的成本指标是全周期成本（TCO）。一个组织（如谷歌）购买数千张芯片时所支付的实际价格取决于与相关企业的谈判沟通。由于涉及商业机密，我们无法公开此类价格信息或数据。但是，功率与 TCO 相关，我们可以公开每台服务器的功耗数，因此这里我们使用性能／功耗比代替性能／TCO 比。这部分我们对比了整个服务器而不是单个芯片。</p><p>图 4 显示了 K80 GPU 和 TPU 相对于 Haswell CPU 的平均性能/功耗比。我们给出了两种不同的性能/功耗比计算。我们展示了两种不同的性能／功耗计算方法。第一种“total”包括计算 GPU 和 TPU 的性能／功耗时主机 CPU 服务器所消耗的功率；第二种“incremental”从 GPU 和 TPU 中减去了主机 CPU 服务器所消耗的功率。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92565fd836a.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">图 4：GPU 服务器与 CPU 服务器的性能/功耗对比（蓝色条）、TPU 服务器与 CPU 服务器的功耗对比（红色条）、TPU 服务器与 GPU 服务器的功耗对比（橙色条）。TPU' 是使用 K80 的 GDDR5 内存将 TPU 进行改进后的芯片</span></p><p>对于总性能/瓦特，K80 服务器是 Haswell 的2.1倍。 对于增量性能/瓦特，当忽略 Haswell 服务器电源时，K80 服务器是 Haswell 的 2.9 倍。TPU 服务器的总性能/瓦特比 Haswell 要高出34倍，TPU 服务器的性能/功率也就是 K80 服务器的 16 倍。 对于 TPU 来说，相比 CPU 的相对增量性能/瓦特以谷歌设计 ASIC 的水平已经做到了 83 倍，同时也就是 GPU 的性能/瓦特的29倍。</p><h3><span style="color: #C0504D;"><strong>对替代性 TPU 设计的评估</strong></span></h3><p>和 FPU 类似，TPU 协同处理器比较容易评估，因此我们为六个应用创建了一个性能模型。模型模拟的结果和硬件实际性能的平均差距小于 10%。</p><p>我们使用性能模型评估了另一款假想的 TPU 芯片，记为 TPU'（使用同样的半导体技术再多花 15 个月我们就能设计出这款芯片）。更激进的逻辑合成和模块设计可以把时钟频率再提高 50%；为 GDDR5 内存设计接口电路（就像 K80 那样）可以将权重读取的内存带宽提高四倍，将 roofline 从斜到平的拐点从 1350 降到 250。</p><p><strong>单独将时钟频率提高到 1,050 MHz 而不改善内存的话，性能提升非常有限。如果我们把时钟频率保持在 700MHz，但改用 GDDR5 作为内存，则加权平均值飞跃至 3.9倍。</strong>同时做这两种措施其实并不会改变性能，因此假设的 TPU' 只具备更快的内存就够了。</p><p>将 DDR3 权重内存替换成与 K80 相同 GDDR5 内存需要将内存通道的数量翻一倍，即 4 个通道。这一改进会需要将芯片面积扩大约 10%。GDDR5 还需要将 TPU 系统的功率预算从 861W 提高到 900W 左右，因为每台服务器都有四个 TPU。</p><p>从图4可看出，TPU'的总体每硅片性能／功耗是 Haswell 的 86 倍，K80 的 41 倍。其 incremental 指标是 Haswell 的 196 倍，K80 的 68 倍。</p><h3><span style="color: #C0504D;">讨论</span></h3><p>这部分按照 Hennessy 和 Patterson 的<strong>谬误-陷阱-反驳</strong>格式来展开：</p><p><strong>谬误：数据中心的 DNN 推断应用将吞吐量和响应时间处于同等重要的地位。</strong>我们惊讶于谷歌 TPU 开发者对响应时间有这么高的要求，2014 年有人透露说的是：对于 TPU 来说，批量大小应该足够大，以到达 TPU 的计算性能峰值，对延迟的要求不用那么苛刻。一个起到推动作用的应用是离线图像处理，谷歌开发者的直觉是，如果交互式服务也需要 TPU，则大部分服务需要累积足够大的批量然后才交给 TPU 计算。即使 2014 年谷歌关注响应时间（LSTM1）的应用开发者称，2014 年的限制是 10ms，而真正向 TPU 移植时 10ms 将被减少至 7ms。很多此类服务对 TPU 的意料之外的要求，以及它们对快速响应时间的影响和偏好，改变了这个等式。应用编写者通常会选择降低延迟，而不是累积更大的批量。幸运的是，TPU 具备一个简单、可重复的执行模型，来满足交互式服务的低响应时间以及高峰值吞吐量要求，即便是计算相对较小的批量时也比当前 CPU 和 GPU 具备更好的性能。</p><p><strong>谬误：K80 GPU 架构很适合进行 DNN 推理</strong>。我们发现 TPU 在性能、能耗和成本方面优于 K80 GPU 有五个方面的原因。1、TPU 只有一个处理器，而 K80 有 13 个，单线程当然更容易满足严格的延迟目标。2、TPU 具备一个非常大的二维乘法单元，GPU 有 13 个小的一维乘法单元。DNN 的矩阵相乘密度适合二维阵列中的算术逻辑运算单元。3、二维阵列还能通过避免访问寄存器来促成脉动式的芯片实现，节约能源。4、TPU 的量化应用使用 8 位整型，而不是 GPU 的 32 位浮点；&nbsp;K80 并不支持 8 位整型。使用更小的数据，改善的不仅是计算能耗，还能四倍化权重 FIFO 的有效容量和权重内存的有效带宽。（尽管推理时使用的是 8 位整型，但训练这些应用时会保证和使用浮点一样的准确率）5、TPU 忽略 GPU 需要而 DNN 不需要的特征，从而缩小 TPU 芯片、节约能耗、为其他改进留下空间。TPU 芯片的大小几乎是 K80 的一半，通常运行所需能量是后者的三分之一，而它的内存却是后者的 3.5 倍。这五个因素导致 TPU 在能耗和性能方面优于 K80 GPU 30 倍。</p><p><strong>陷阱：在设计领域专用架构时不顾架构历史</strong>。不适用通用计算的想法可能适合领域专用架构。对于 TPU 而言，三个重要的架构特征可以追溯到 1980 年代早期：脉动阵列（systolic array）、解耦访问/执行（decoupled access/execute）和复杂的指令集。第一个特征减少了大型矩阵相乘单元的面积和能耗；第二个特征在矩阵相乘单元运算期间并行获取权重；第三个特征更好地利用 PCIe bus 的有限带宽来发送指令。因此，对计算机架构历史比较了解的领域专用架构设计师具备竞争优势。</p><p><strong>谬误：如果谷歌对 CPU 的使用更加高效，它得到的结果将可以媲美 TPU。</strong>由于有效使用 CPU 的高级向量扩展（AVX2）对整型计算做高效的支持需要大量工作，最初在 CPU 上只有一个 DNN 有 8 位整型的性能测试结果，它的性能提升大约是 3.5 倍。所有的 CPU 性能评估都基于浮点的计算性能来展示会更明确（也不会占太多图表空间），也就没有给这个整型计算结果绘制单独的 Roofline 图。如果所有 DNN 都能够得到类似的加速，TPU 带来的性能/功耗比提升将分别从 41 倍和 83 倍降为 12 倍和 24 倍。</p><p><strong>谬误：如果谷歌使用合适的新版本，GPU 结果将与 TPU 差不多。</strong>表 3 报告了发布 GPU 和客户何时可以在云中使用 GPU 的区别。与较新的 GPU 进行公平比较将包括新的 TPU，而对于额外增加的 10W 功耗，我们只需使用 K80 的 GDDR5 内存就可以将 28 纳米、0.7GHz、40W TPU 的性能提高三倍。把 TPU 移动到 16 纳米工艺将进一步提高其性能/功耗。16 纳米英伟达 Pascal P40 GPU 的峰值性能是第一代TPU 的一半，但它 250 瓦的能耗却是原来的很多倍。如前所述，缺乏错误检测意味着 Google 无法再去数据中心部署 P40，因此无法在它们身上运行生产工作负载来确定其实际相对性能。</p><h3><span style="color: #C0504D;"><strong>相关研究</strong></span></h3><p>两篇介绍 DNN ASIC 的研究文章至少可以追溯到 20 世纪 90 年代初。如 2016 年的 ACM 通讯中所述，DianNao 家族有四种 DNN 架构，通过对 DNN 应用程序中的内存访问模式提供有效的架构支持，可以最大限度地减少片上和外部 DRAM 的内存访问。最初的 DianNao 使用 64 个 16 位整数乘法累加单元的阵列。</p><p><img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b925664cc061.jpg"></p><p style="text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai;">谷歌 TPU 3.0 于今年 5 月推出，其功能是 TPU 2.0 的八倍，性能高达 100petaflops，芯片使用液体冷却</span></p><p>为 DNN 设计特定领域架构仍然是计算机架构师的热门话题，其中一个焦点是稀疏矩阵的计算架构，这是在 2015 年 TPU 首次部署之后提出的。Efficient Inference Engine（高效推理机）中有一步单独的初始扫描，它会过滤去掉非常小的值，将权重数量减少到 1/10 左右，然后使用哈夫曼编码进一步缩小数据以提高推理的性能。Cnvlutin 略去了激活输入为零时的乘法运算，这种计算出现的几率可以达到 44%，部分原因是非线性变换函数 ReLU 会把输入的负值转换为零；这种略去计算的做法使平均性能提高了 1.4 倍。Eyeriss 是一种新颖的低功耗数据流架构，通过游程编码利用数据中的零来减少内存占用，并通过避免输入为零时的计算来节省能耗。Minerva 是一种跨算法、结构和电路学科的协同设计系统，通过量化数据以及对较小的激活函数剪枝的方式把功耗降低到原来的 1/8。这种系统在 2017 年展出的成果是 SCNN——一种稀疏和压缩卷积神经网络的加速器。权重和激活函数都被压缩在 DRAM 和内部缓冲器中，从而减少了数据传输所需的时间和能量，并允许芯片存储更大的模型。</p><p>2016 年以来的另一个趋势，是用于训练的特定领域架构。例如，ScaleDeep 就是为 DNN 训练和推理设计的高性能服务器的一次尝试，它包含数千个处理器。其中的每块芯片都以 3：1 的比例包含计算专用模块和存储专用模块，性能优于 GPU 6-28 倍。它支持 16 位或 32 位浮点计算。芯片通过与 DNN 通信模式匹配的高性能互连拓扑连接。和 SCNN 一样，这种拓扑只在 CNN 上评估。2016 年，CNN 仅占谷歌数据中心 TPU 工作量的 5%。计算机架构师期待对其它类型的 DNN 和硬件实现进行 ScaleDeep 评估。</p><p>DNN 似乎是 FPGA 作为数据中心计算平台的一个良好用例。实际部署的一个例子是 Catapult。尽管 Catapult 是在 2014 年公开发布的，但它与 TPU 是同一个时代的，因为 2015 年在微软数据中心部署了 28 纳米 Stratix V FPGA，与谷歌部署 TPU 差不多在同一时间。Catapult 运行 CNN 比普通服务器快 2.3 倍。也许 Catapult 和 TPU 最显著的区别在于，为了获得最佳性能，用户必须使用低级硬件设计语言 Verilog 为 FPGA 编写长程序，而不是使用高级 TensorFlow 框架编写短程序；也就是说，“可再编程性”（re-programmability）来自于 TPU 的软件，而不是最快 FPGA 的固件。</p><h3><span style="color: #C0504D;"><strong>总结</strong></span></h3><p>尽管 TPU 在 I/O 总线上，并且内存带宽相对有限限制了它发挥全部效能（六个 DNN 应用程序中有四个受限于内存），但一个很大的数即便拆到很细，拆到每个周期 65536 次乘法累加计算，仍然是一个相对较大的数字，如 roofline 性能模型所示。这个结果表明，Amdahl 定律的其实有一个非常有价值的推论——大量廉价资源的低效利用仍然可以提供颇具性价比的高性能。</p><p>我们了解到，推理应用具有严格的响应时间限制，因为它们通常是面向用户的应用；因此，为 DNN 设计计算芯片的设计师们需要保证满足 99% 情况下的时间限制要求。</p><p>TPU 芯片利用其在 MAC 和片上内存的优势运行使用特定领域 TensorFlow 框架编写的短程序，该 TensorFlow 框架比 K80 GPU 芯片快 15 倍，因此能获得 29 倍的性能/功耗优势，这与性能/总拥有成本相关。与 Haswell CPU 芯片相比，对应的比率分别为 29 和 83 倍。</p><p>有五个架构因素可以解释这种性能差距：</p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>处理器。TPU只有一个处理器，而K80有13个，CPU有18个；单线程使系统更容易保持在固定的延迟限制内。</p></li><li><p>大型二维乘法单元。TPU有一个非常大的二维乘法单元，而CPU和GPU分别只有18个和13个较小的一维乘法单元；二维硬件在矩阵乘法中有很好的性能。</p></li><li><p>脉动阵列。二维组织支持脉动阵列，减少寄存器访问和能量消耗。</p></li><li><p>8位整型。TPU的应用使用 8 位整型而不是 32 位浮点运算来提高计算和内存效率。</p></li><li><p>弃掉的特征。TPU放弃了 CPU 和 GPU 需要但是 DNN 用不到的功能，这使得 TPU 更便宜，同时可以节约资源，并允许晶体管被重新用于特定领域的板载内存。</p></li></ul><p>虽然未来的 CPU 和 GPU 在运行推理时速度更快，但是使用 circa-2015 型 GPU 内存重新设计的 TPU 将比原来快三倍，并使其性能/功耗优势分别为 K80 和 Haswell 的 70 倍和 200 倍。</p><p>至少在过去十年中，计算机架构研究人员发布的创新成果都是来自模拟计算的，这些成果使用了有限的基准，对于通用处理器的改进也只有 10% 或更少，而我们现在报告的性能提升是原来的十倍不止，这是应用于真实生产应用的真实硬件中部署的特定领域架构的收益。</p><p>商业产品之间的数量级差异在计算机架构中很少见，而这甚至可能导致 TPU 成为该领域未来工作的典范。我们预计，其他人也会跟进这个方向，并将门槛提得更高。</p><h3><span style="color: #C0504D;"><strong>致谢</strong></span></h3><p>我们要感谢TPU团队的所有成员在整个项目中的贡献。这真的要一整个团队才能做到这些设计，验证和实施TPU等系统的硬件和软件的制造，部署并大规模运用——正如我们在谷歌所见到的那样。</p><p>via&nbsp;<a href="https://m-cacm.acm.org/magazines/2018/9/230571-a-domain-specific-architecture-for-deep-neural-networks/fulltext" target="_blank" rel="nofollow">acm.org</a>，雷锋网<span style="color:#FD5D3C;">(公众号：雷锋网)</span> AI 科技评论编译</p><p>相关文章：</p><p><a href="https://www.leiphone.com/news/201807/QEPVhuij5SWvpzSb.html" target="_self">图灵奖得主John Hennessy、David Patterson访谈：未来小学生都能做机器学习</a><br></p><p><a href="https://www.leiphone.com/news/201806/4E3PCDRaoGi8H8Ey.html" target="_self">独家 | 计算机体系结构顶级会议ISCA，2017图灵奖得主展望黄金时代</a><br></p>
+                                                <p>雷锋网原创文章，未经授权禁止转载。详情见<a href="http://dwz.cn/4ErMxZ" rel="nofollow" target="_blank">转载须知</a>。</p>
+                                                                      <a href="https://www.leiphone.com/news/201807/SizA1TBiY95jdOsJ.html" target="_blank">
+                            <img alt="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b7e689c8b511.jpg">
+                       </a>
+                                               
+                                                <!-- 正文内容结束 -->
+                    </div>
+
+                    <!-- 分享 -->
+                    <div class="pageActive clr">
+                        <div class="mark-like-btn ">
+                            <a class="collect collect-no" href="javascript:;"><i></i><span>3</span>人收藏</a>
+                        </div>
+                        <!-- Baidu Button BEGIN -->
+                        <div class="bdsharebuttonbox bdshare-button-style0-24" data-tag="share_179126" data-bd-bind="1537860450672">
+                            <span class="s-txt">分享：</span>
+                            <a href="javascript:void()" onclick="openYNote(&#39;https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html&#39;,&#39;为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅&#39;, &#39;https://static.leiphone.com/uploads/new/article/pic/201809/5b92593ee0682.jpg&#39;,&#39;leiphone&#39;,&#39;为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅&#39;)" class="youdao " title="收藏此篇文章到有道云笔记"><i></i></a>
+                            <a class="bds_tsina weibo-btn  " data-cmd="tsina" title="分享到新浪微博"></a>
+                            <a class="weixin-btn bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                            <a class="bds_more more-btn" data-cmd="more"></a>
+                        </div>
+                        <script type="text/javascript">
+                            //在这里定义bds_config
+                            // var bds_config = {'snsKey':{'tsina':'2475906690'}};
+                            // var qcode = {
+                            //     api : "http://qr.liantu.com/api.php?text=",
+                            //     url :  window.location.href,
+                            //     exist : false,
+                            //     create : function(){
+                            //         if(!this.exist){
+                            //             var image = document.createElement('img');
+                            //             image.src = this.api + this.url;
+                            //             image.width = 120;
+                            //             this.exist = true;
+                            //             return image;
+                            //         }
+                            //     }
+                            // };
+                        </script>
+
+                    </div>
+                    <!-- 相关文章 -->
+                    <!-- 相关文章 start -->
+<div class="realted-article clr">
+    <div class="title clr">
+        <span class="fl">相关文章</span>
+    </div>
+    <div class="related-link clr">
+                         <a href="https://www.leiphone.com/tag/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C" target="_blank" title="神经网络">神经网络</a>
+                 <a href="https://www.leiphone.com/tag/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD" target="_blank" title="人工智能">人工智能</a>
+                 <a href="https://www.leiphone.com/tag/TPU" target="_blank" title="TPU">TPU</a>
+                 <a href="https://www.leiphone.com/tag/%E8%B0%B7%E6%AD%8C" target="_blank" title="谷歌">谷歌</a>
+                 <a href="https://www.leiphone.com/tag/%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B" target="_blank" title="摩尔定律">摩尔定律</a>
+                     </div>
+    <div class="list">
+        <ul>
+                        <li class="first">
+                <a href="https://www.leiphone.com/news/201809/snezJyk32bUpwKgW.html" target="_blank" class="pic">
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b96689df0d7f.png" alt="" width="170" height="100">
+                </a>
+                <div class="txt">
+                    <a href="https://www.leiphone.com/news/201809/snezJyk32bUpwKgW.html" target="_blank">让算法解放算法工程师——NAS 综述</a>
+                </div>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201809/NaJq6vlWCxW36TpC.html" target="_blank" class="pic">
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b9a0cdcc4c73.jpg" alt="" width="170" height="100">
+                </a>
+                <div class="txt">
+                    <a href="https://www.leiphone.com/news/201809/NaJq6vlWCxW36TpC.html" target="_blank">地平线：面向低功耗 AI 芯片上视觉任务的神经网络设 ...</a>
+                </div>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201808/umlQB7Zr2dGuqUDr.html" target="_blank" class="pic">
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b92382f37169.jpg" alt="" width="170" height="100">
+                </a>
+                <div class="txt">
+                    <a href="https://www.leiphone.com/news/201808/umlQB7Zr2dGuqUDr.html" target="_blank">神经网络并不是尚方宝剑，我们需要正视深度 NLP 模型 ...</a>
+                </div>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201808/ucdEZXTnL2D3F12P.html" target="_blank" class="pic">
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/5b8667022bb38.png" alt="" width="170" height="100">
+                </a>
+                <div class="txt">
+                    <a href="https://www.leiphone.com/news/201808/ucdEZXTnL2D3F12P.html" target="_blank">职播间 | 面向低功耗 AI 芯片上视觉任务的神经网络设 ...</a>
+                </div>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+<!-- 相关文章 end -->
+
+
+                    <!-- 推荐文章 -->
+                    <div class="realted-article clr recmdArticle" data-article_id="179126">
+                        <div class="list">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 广告 -->
+                    
+                    <!-- 文章 评论  -->
+                    <!-- 评论 -->
+<div class="article-comment lp-comment" id="lph-comment-179126">
+    <div class="useComJs">
+        <!-- <input id="lp_item_id" type="hidden" name="item_id" value="179126">
+        <input id="lp_item_type" type="hidden" name="type" value="2"> -->
+
+        <div class="h2 clr">
+            <h2>文章点评：</h2>
+            <!-- <strong class="h2-tip">
+                （您需要<a class="c-log" href="javascript:openPop('#lp-login-pop');">登录</a>后才能评论 <a href="https://home.leiphone.com/main/register" class="c-reg">没有账号</a> ？）</strong>
+            -->        
+        </div>
+        <div class="submit clr commentForm" id="">
+            <div class="text">
+                <textarea name="Comment[content]" placeholder="我有话要说……"></textarea>
+            </div>
+            <div class="sub clr publishtosina">
+                <span class="emotionc emotion0" data-emotion="0">表情</span>
+                <label><input id="" type="checkbox" name="pushForWeibo"> 同步到新浪微博</label>
+                <div class="qqFace" style="position:absolute; display:none; z-index:10"></div>
+                <button type="submit" title="提交">提交</button>
+            </div>
+        </div>
+        <!-- <div class="jcWords">
+            <h3><strong>精彩评论</strong></h3>
+            <ul class="comment-say">
+                
+            </ul>
+        </div>
+        <div class="words">
+            <h3><strong>最新评论</strong><span></span>条评论<i></i></h3>
+            <ul class="comment-say">
+                
+            </ul>
+            <div id="comment-say-more" class="comment-say-more">
+
+                <span>加载更多</span>
+                <em>没有更多了</em>
+
+            </div>
+        </div> -->
+    </div>
+				<div class="article-comment-container" data-item-id="-1" data-type-id="2">														</div>		</div>
+<!-- 评论 -->
+
+
+
+                </div>
+
+                <script>
+    var codeAuthor_id   = "liuroujiang3232";
+    var author_id       = "24040";
+</script>
+<div class="article-right">
+        <div class="aboutAur-main">
+        <div class="aboutAur-msg">
+            <a href="https://www.leiphone.com/author/liuroujiang3232" class="avater" target="_blank" rel="nofollow">
+                <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/48_avatar_pic_100_100.jpg" alt="" width="80" height="80">
+            </a>
+            <div class="name">
+                <a href="https://www.leiphone.com/author/liuroujiang3232" target="_blank" rel="nofollow"><span>刘肉酱</span><em class="gold"></em></a>
+            </div>
+            <p class="profession">知情人士</p>
+            <div class="saying">
+                <em class="l-quote"></em>
+                <span></span>
+                <em class="r-quote"></em>
+            </div>
+            <div class="operate-btn">
+                <table>
+                    <tbody><tr>
+                                                                        <td>
+                            <a href="mailto:599044790@qq.com" class="eml sub_a" rel="nofollow"><em></em></a>
+                        </td>
+                                                                    </tr>
+                </tbody></table>
+            </div>
+            <div class="btns">
+                <a href="javascript:;">发私信</a>
+            </div>
+        </div>
+
+
+        <!-- 作者的文章 -->
+        
+<div class="mouthHot-article">
+    <div class="title">当月热门文章</div>
+        <div class="list">
+            <ul>
+                        <li>
+                <a href="https://www.leiphone.com/news/201808/62Ro6Cs1SEUTDGe4.html" title="想从事人工智能和大数据的学生们，这里有几条职业建议给你" target="_blank">想从事人工智能和大数据的学生们，这里有几条职业建议给你</a>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201808/WXeOHcxJ7z07GKwz.html" title="新的网络优化方法：随机权值平均" target="_blank">新的网络优化方法：随机权值平均</a>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html" title="为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅" target="_blank">为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅</a>
+            </li>
+                        <li>
+                <a href="https://www.leiphone.com/news/201809/KVMsQOpha3xh984s.html" title="多任务智能体的一大步：DeepMind 一次搞定 57 种 Atari 游戏的 PopArt" target="_blank">多任务智能体的一大步：DeepMind 一次搞定 57 种 Atari 游戏的 PopArt</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+       <!-- 作者文章结束 -->
+    </div>
+
+            <div class="weekly-choice hotNew-article">
+        <div class="rComTitle">
+            最新文章
+        </div>
+        <div class="list">
+            <ul class="justTxt">
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/Ir7cf3Tcs41YBM44.html" target="_blank">
+                            <em></em>CNCC技术论坛 | 11位企业高管担任技术论坛主席，四大亮点逐个看 </a>
+                    </li>
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/KVMsQOpha3xh984s.html" target="_blank">
+                            <em></em>多任务智能体的一大步：DeepMind 一次搞定 57 种 Atari 游戏的 PopArt </a>
+                    </li>
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/HaD17g4UOFnisG4s.html" target="_blank">
+                            <em></em>大讲堂 | 目标检测集成框架在医学图像AI辅助分析中的应用 </a>
+                    </li>
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/tWcWMgwHt6YH7Ovz.html" target="_blank">
+                            <em></em>邹炎炎：语义分析介绍及跨语言信息在语义分析中的应用 | AI 研习社第 70 期大讲堂 </a>
+                    </li>
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/3YAwTvAPUDdGFTjN.html" target="_blank">
+                            <em></em>快手 AI 技术副总裁郑文：快手在内容生产&amp;内容理解上用到的 AI 技术 </a>
+                    </li>
+                                    <li>
+                        <a href="https://www.leiphone.com/news/201809/4blXULGE2KNYGqHY.html" target="_blank">
+                            <em></em>利用 Doc2Vec 对 Quora 问题标签聚类 </a>
+                    </li>
+                            </ul>
+        </div>
+    </div>
+        <div class="serKesy-list">
+    <div class="rComTitle">
+        热门搜索
+    </div>
+    <div class="list clr">
+                <a href="https://www.leiphone.com/tag/Apple%20Pay" target="_blank">Apple Pay</a>
+                <a href="https://www.leiphone.com/tag/Magic%20Leap" target="_blank">Magic Leap</a>
+                <a href="https://www.leiphone.com/tag/%E5%B9%BF%E5%91%8A" target="_blank">广告</a>
+                <a href="https://www.leiphone.com/tag/ARM" target="_blank">ARM</a>
+                <a href="https://www.leiphone.com/tag/%E7%9C%8B%E7%82%B9" target="_blank">看点</a>
+                <a href="https://www.leiphone.com/tag/%E5%9C%B0%E5%9B%BE" target="_blank">地图</a>
+                <a href="https://www.leiphone.com/tag/Galaxy%20S6" target="_blank">Galaxy S6</a>
+                <a href="https://www.leiphone.com/tag/%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">小程序</a>
+                <a href="https://www.leiphone.com/tag/Path" target="_blank">Path</a>
+                <a href="https://www.leiphone.com/tag/%E8%93%9D%E7%89%99" target="_blank">蓝牙</a>
+                <a href="https://www.leiphone.com/tag/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E" target="_blank">搜索引擎</a>
+            </div>
+</div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="lineBg"></div>
+    <!-- 百度分享 -->
+    <script>
+
+        window._bd_share_config = {
+            common:{
+                bdMiniList:['tsina','weixin','more']
+            },
+            share : [
+                {
+                    bdText : '为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅',
+                    bdDesc : '为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅',
+                    bdUrl : 'https://www.leiphone.com/news/201809/dDheR8Wdh0dH3Q95.html',
+                    bdPic : 'https://static.leiphone.com/uploads/new/article/pic/201809/5b92593ee0682.jpg',
+                    "tag" : "share_179126",
+                    "bdSize" : 24
+                },
+            ],
+        }
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://www.leiphone.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+
+    </script>
+</div>
+
+
+
+<script>
+    function openYNote(url, title, pic, vendor, summary) {
+        var target = 'http://note.youdao.com/memory/?url=' + encodeURIComponent(url) +
+            '&title=' + encodeURIComponent(title) + '&pic=' + encodeURIComponent(pic) +
+            '&product=' + encodeURIComponent('网页收藏') +
+            '&summary=' + encodeURIComponent(summary) + '&vendor=' + encodeURIComponent(vendor);
+        window.open(target);
+    }
+  seajs.use(['https://www.leiphone.com/resWeb/js/article' , 'https://www.leiphone.com/resWeb/js/load_articles']);
+
+
+
+   // document.getElementById('weixin-qt').insertBefore(qcode.create(),document.getElementById('weixin-qt-msg'));
+</script>
+
+<footer class="yp-footer">
+    <!-- 友情链接，热门关键字 -->
+    <div class="yp-footer-link">
+        <div class="wrapper">
+            <div class="tab_tit clr">
+                                <a href="javascript:;">热门关键字</a>
+            </div>
+            <div class="tab_con">
+                <ul>
+                                        
+                                        <li class="cur">
+                                        
+                                                                                            <a href="http://www.leiphone.com/tags" target="_blank">热门标签</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD" target="_blank">人工智能 </a>                                                                    <a href="https://www.leiphone.com/tag/%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">机器人</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0" target="_blank">机器学习</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0" target="_blank">深度学习</a>                                                                    <a href="https://www.leiphone.com/tag/%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80" target="_blank">金融科技</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%9C%AA%E6%9D%A5%E5%8C%BB%E7%96%97" target="_blank">未来医疗</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E9%A9%BE%E9%A9%B6" target="_blank">智能驾驶</a>                                                                    <a href="https://www.leiphone.com/tag/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6" target="_blank">自动驾驶</a>                                                                    <a href="https://www.leiphone.com/tag/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89" target="_blank">计算机视觉</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE" target="_blank">激光雷达</a>                                                                    <a href="https://www.leiphone.com/tag/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB" target="_blank">图像识别</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E9%9F%B3%E7%AE%B1" target="_blank">智能音箱</a>                                                                    <a href="https://www.leiphone.com/tag/%E5%8C%BA%E5%9D%97%E9%93%BE" target="_blank">区块链</a>                                                                    <a href="https://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E6%8A%95%E9%A1%BE" target="_blank">智能投顾</a>                                                                    <a href="https://www.leiphone.com/tag/%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F" target="_blank">医学影像</a>                                                                    <a href="https://www.leiphone.com/tag/%E7%89%A9%E8%81%94%E7%BD%91" target="_blank">物联网</a>                                                                    <a href="https://www.leiphone.com/tag/IoT" target="_blank">IoT</a>                                                                    <a href="https://www.leiphone.com/tag/CV" target="_blank">CV</a>                                                                    <a href="http://www.leiphone.com/special/235/201609/57e4fe78a71ea.html" target="_blank">微信小程序平台</a>                                                                    <a href="http://www.leiphone.com/news/201701/ri7dDB7Fq0mMj1qh.html" target="_blank">微信小程序在哪</a>                                                                    <a href="http://www.leiphone.com/tag/CES%202017" target="_blank">CES 2017</a>                                                                    <a href="http://www.leiphone.com/tag/CES" target="_blank">CES</a>                                                                    <a href="http://www.leiphone.com/tag/2016%E5%B9%B4%E6%9C%80%E5%80%BC%E5%BE%97%E8%B4%AD%E4%B9%B0%E7%9A%84%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" target="_blank">2016年最值得购买的智能硬件</a>                                                                    <a href="http://www.leiphone.com/news/201612/sI2n04bJ5aVzS5Pr.html" target="_blank">2016 互联网</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">小程序</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%BE%AE%E4%BF%A1%E6%9C%8B%E5%8F%8B%E5%9C%88" target="_blank">微信朋友圈</a>                                                                    <a href="http://www.leiphone.com/news/201612/J8qZLCwViDpwygen.html" target="_blank">抢票软件</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA" target="_blank">智能手机</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85" target="_blank">智能家居</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E6%89%8B%E7%8E%AF" target="_blank">智能手环</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">智能机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E7%94%B5%E8%A7%86" target="_blank">智能电视</a>                                                                    <a href="http://www.leiphone.com/tag/360%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6" target="_blank">360智能硬件</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E6%91%84%E5%83%8F%E6%9C%BA" target="_blank">智能摄像机</a>                                                                    <a href="http://www.leiphone.com/news/201601/mQ8TFsppN7ROxYmS.html" target="_blank">智能硬件产品</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%8F%91%E5%B1%95" target="_blank">智能硬件发展</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%99%BA%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%88%9B%E4%B8%9A" target="_blank">智能硬件创业</a>                                                                    <a href="http://www.leiphone.com/tag/%E9%BB%91%E5%AE%A2" target="_blank">黑客</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%99%BD%E5%B8%BD%E5%AD%90" target="_blank">白帽子</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%A4%A7%E6%95%B0%E6%8D%AE" target="_blank">大数据</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%BA%91%E8%AE%A1%E7%AE%97" target="_blank">云计算</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6" target="_blank">新能源汽车</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6" target="_blank">无人驾驶</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%97%A0%E4%BA%BA%E6%9C%BA" target="_blank">无人机</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%A4%A7%E7%96%86" target="_blank">大疆</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%B0%8F%E7%B1%B3%E6%97%A0%E4%BA%BA%E6%9C%BA" target="_blank">小米无人机</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%89%B9%E6%96%AF%E6%8B%89" target="_blank">特斯拉</a>                                                                    <a href="http://www.leiphone.com/tag/VR%E6%B8%B8%E6%88%8F" target="_blank">VR游戏</a>                                                                    <a href="http://www.leiphone.com/tag/VR%E7%94%B5%E5%BD%B1" target="_blank">VR电影</a>                                                                    <a href="http://www.leiphone.com/tag/VR%E8%A7%86%E9%A2%91" target="_blank">VR视频</a>                                                                    <a href="http://www.leiphone.com/tag/VR%E7%9C%BC%E9%95%9C" target="_blank">VR眼镜</a>                                                                    <a href="http://www.leiphone.com/tag/VR%E8%B4%AD%E7%89%A9" target="_blank">VR购物</a>                                                                    <a href="http://www.leiphone.com/tag/AR" target="_blank">AR</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%9B%B4%E6%92%AD" target="_blank">直播</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%89%AB%E5%9C%B0%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">扫地机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%8C%BB%E7%96%97%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">医疗机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%B7%A5%E4%B8%9A%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">工业机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%B1%BB%E4%BA%BA%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">类人机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">聊天机器人</a>                                                                    <a href="http://www.leiphone.com/news/201606/kyKJpmCelZrWE7K4.html" target="_blank">微信机器人</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F" target="_blank">微信小程序</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%A7%BB%E5%8A%A8%E6%94%AF%E4%BB%98" target="_blank">移动支付</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%94%AF%E4%BB%98%E5%AE%9D" target="_blank">支付宝</a>                                                                    <a href="http://www.leiphone.com/tag/P2P" target="_blank">P2P</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%8C%BA%E5%9D%97%E9%93%BE" target="_blank">区块链</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%AF%94%E7%89%B9%E5%B8%81" target="_blank">比特币</a>                                                                    <a href="http://www.leiphone.com/tag/%E9%A3%8E%E6%8E%A7" target="_blank">风控</a>                                                                    <a href="http://www.leiphone.com/tag/%E9%AB%98%E7%9B%9B" target="_blank">高盛</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB" target="_blank">人脸识别</a>                                                                    <a href="http://www.leiphone.com/tag/%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB" target="_blank">指纹识别</a>                                                                    <a href="http://www.leiphone.com/tag/%E9%BB%91%E7%A7%91%E6%8A%80" target="_blank">黑科技</a>                                                                    <a href="http://www.leiphone.com/news/201502/S5yH58slS9gpBrm4.html" target="_blank">谷歌地图</a>                                                                    <a href="http://www.leiphone.com/tag/%E8%B0%B7%E6%AD%8C" target="_blank">谷歌</a>                                                                    <a href="http://www.leiphone.com/tag/IBM" target="_blank">IBM</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%BE%AE%E8%BD%AF" target="_blank">微软</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%B9%90%E8%A7%86" target="_blank">乐视</a>                                                                    <a href="http://www.leiphone.com/tag/%E7%99%BE%E5%BA%A6" target="_blank">百度</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%B8%89%E6%98%9Fs8" target="_blank">三星s8</a>                                                                    <a href="http://www.leiphone.com/tag/%E8%85%BE%E8%AE%AF" target="_blank">腾讯</a>                                                                    <a href="http://www.leiphone.com/list/%E4%B8%89%E6%98%9FNote8" target="_blank">三星Note8 </a>                                                                    <a href="http://www.leiphone.com/news/201610/oUUuMZtyi7H6xMGA.html" target="_blank">小米MIX</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%B0%8F%E7%B1%B3Note" target="_blank">小米Note</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%8D%8E%E4%B8%BA" target="_blank">华为</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%B0%8F%E7%B1%B3" target="_blank">小米</a>                                                                    <a href="http://www.leiphone.com/tag/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4" target="_blank">阿里巴巴</a>                                                                    <a href="http://www.leiphone.com/tag/%E8%8B%B9%E6%9E%9C" target="_blank">苹果</a>                                                                    <a href="http://www.leiphone.com/tag/MacBook%20Pro" target="_blank">MacBook Pro</a>                                                                    <a href="http://www.leiphone.com/tag/iPhone" target="_blank">iPhone</a>                                                                    <a href="http://www.leiphone.com/tag/Facebook" target="_blank">Facebook</a>                                                                    <a href="http://www.leiphone.com/tag/GAIR" target="_blank">GAIR</a>                                                                    <a href="http://www.leiphone.com/tag/IROS" target="_blank">IROS</a>                                                                    <a href="http://www.leiphone.com/tag/%E5%8F%8C%E5%88%9B%E5%91%A8" target="_blank">双创周</a>                                                                    <a href="http://www.leiphone.com/tag/%E4%BA%91%E6%A0%96%E5%A4%A7%E4%BC%9A" target="_blank">云栖大会</a>                                                                    <a href="https://www.iuplus.com/" target="_blank">优葩</a>                                                                    <a href="http://www.leiphone.com/news/201610/qN5pHyh1kQUQEGtw.html" target="_blank">智能硬件公司</a>                                                                    <a href="http://www.leiphone.com/category/weiwu" target="_blank">智能硬件</a>                                                                    <a href="http://www.leiphone.com/news/201701/RnURKJ8H5PaG9g7y.html" target="_blank">QQ红包</a>                                                                    <a href="http://www.leiphone.com/news/201701/RnURKJ8H5PaG9g7y.html" target="_blank">支付宝红包</a>                                                                    <a href="http://www.leiphone.com/news/201701/cdANtd69SJLFwdXs.html" target="_blank">敬业福</a>                                                                                    
+                        <a href="https://www.leiphone.com/list/kiva%E6%9C%BA%E5%99%A8%E4%BA%BA" target="_blank">kiva机器人</a><a href="https://www.leiphone.com/list/%E8%8D%B7%E5%85%B0%E6%97%A0%E4%BA%BA%E5%B7%B4%E5%A3%AB" target="_blank">荷兰无人巴士</a><a href="https://www.leiphone.com/list/%E6%99%BA%E8%83%BD%E7%BD%91%E7%AB%99" target="_blank">智能网站</a><a href="https://www.leiphone.com/list/x%E7%BF%BC%E6%88%98%E6%96%97%E6%9C%BA" target="_blank">x翼战斗机</a><a href="https://www.leiphone.com/list/lumia%20950" target="_blank">lumia 950</a><a href="https://www.leiphone.com/list/googlenet" target="_blank">googlenet</a><a href="https://www.leiphone.com/list/%E4%BB%80%E4%B9%88%E6%98%AFapi" target="_blank">什么是api</a><a href="https://www.leiphone.com/list/iphone%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA" target="_blank">iphone自动关机</a><a href="https://www.leiphone.com/list/2016cncc" target="_blank">2016cncc</a><a href="https://www.leiphone.com/list/%E4%B8%89%E6%98%9Fs6" target="_blank">三星s6</a><a href="https://www.leiphone.com/list/2015%E6%8A%95%E8%B5%84%E9%9B%B6%E5%85%83%E6%8C%A3%E9%92%B1%E7%83%AD%E9%97%A8" target="_blank">2015投资零元挣钱热门</a><a href="https://www.leiphone.com/list/mediav" target="_blank">mediav</a><a href="https://www.leiphone.com/list/%E7%9C%8Bvr%E5%A4%B4%E6%99%95" target="_blank">看vr头晕</a><a href="https://www.leiphone.com/list/%E9%98%BF%E9%87%8Cbuy+" target="_blank">阿里buy+</a><a href="https://www.leiphone.com/list/%E5%A5%BD%E5%95%8A" target="_blank">好啊</a>                        <a href="https://www.leiphone.com/list/" target="_blank">更多</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="yp-footer-msg">
+        <div class="wrapper clr">
+            <!-- links -->
+            <div class="links">
+                <a rel="nofollow" href="https://www.leiphone.com/us/contact">联系我们</a>
+                <a rel="nofollow" href="https://www.leiphone.com/us/index">关于我们</a>
+                <a rel="nofollow" href="https://www.leiphone.com/news/201611/0nOqnvNoxI6vX4L9.html">加入我们</a>
+                <a rel="nofollow" href="https://www.leiphone.com/us/feedback">意见反馈</a>
+                <a rel="nofollow" href="https://www.leiphone.com/contribute/index">投稿</a>
+            </div>
+            <!-- 下载app -->
+            <div class="downLoad-app">
+                <div class="qrcode">
+                    <!-- /site/download -->
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/downCode.jpg" width="96" height="96" alt="">
+                </div>
+                <div class="txt">
+                    <p>下载雷锋网客户端</p>
+                    <a rel="nofollow" href="https://itunes.apple.com/cn/app/lei-feng-wang-yi-dong-hu-lian/id579529120?mt=8" target="_blank" class="iPhone"><em></em>iPhone</a>
+                    <a rel="nofollow" href="https://android.myapp.com/myapp/detail.htm?apkName=com.leiphone.app" target="_blank" class="Android"><em></em>Android</a>
+                </div>
+            </div>
+            <!-- 关注-->
+            <div class="contact">
+                <a rel="nofollow" href="mailto:web@leiphone.com" class="eml sub_a"><em></em></a>
+                <a rel="nofollow" href="https://www.weibo.com/p/1006062118746300" target="_blank" class="sina sub_a"><em></em></a>
+            </div>
+        </div>
+    </div>
+    <!-- copyRight -->
+    <div class="yp-copyright">
+        <div class="wrapper">
+            <p>Copyright © 2011-2018 www.leiphone.com 雷锋网-移动互联网智能终端第一媒体 All Rights Reserved <a target="_blank" style="color:#9baab6;" href="https://www.miitbeian.gov.cn/">粤ICP备11095991号-1</a>
+<!--                 <a  key ="54914497efbfb06e545f711c"  logo_size="83x30"  logo_type="realname"  href="https://www.anquan.org" ><script src="https://static.anquan.org/static/outer/js/aq_auth.js"></script></a> -->
+                &nbsp;&nbsp;
+                <a href="http://szcert.ebs.org.cn/0ee69ac3-f114-4bd9-9ea1-a5a04f7cd44b" rel="nofollow" target="_blank"><img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/govIcon.gif" width="29" height="40"></a>
+<!--                <script id="ebsgovicon" src="https://szcert.ebs.org.cn/govicon.js?id=0ee69ac3-f114-4bd9-9ea1-a5a04f7cd44b&width=29&height=40&type=1" type="text/javascript" charset="utf-8"></script>                &nbsp;&nbsp;-->
+                <a rel="nofollow" href="https://www.leiphone.com/resWeb/images/ICP.jpg" target="_blank" style="color:#9baab6">ICP证粤B2-20150332</a>
+                <a rel="nofollow" href="http://www.qiniu.com/" target="_blank" style="float:right">
+                    <img src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/hzs4.png">
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
+<div id="lph-footer-gotoBar">
+    <div class="gotoTop">   
+        <a href="javascript:;" class="top" data-goto="0" data-start="100" style="display: block;"><em></em></a>
+    </div>
+</div>
+
+<!-- 遮罩层 -->
+<div class="lph-overlay"></div>
+    <!-- 右上角持续提示，邮箱未绑定的时候输出 -->
+    <div class="yzEmail_tip yzEmail_tip1" id="bandEmailTip">
+        <em></em>
+        <span>为了您的账户安全，请<a class="bbtn" href="javascript:;">验证邮箱</a></span>
+        <i class="close"></i>
+    </div>
+
+    <!-- 右上角持续提示，邮箱发送但未验证的时候输出 -->
+    <div class="yzEmail_tip yzEmail_tip2" id="sendEmailTip">
+        <span style="text-align: center;">您的邮箱还未验证,完成可获20积分哟！</span>
+        <p class="links"><a class="rbtn" href="javascript:;">重发邮箱</a><a class="sbtn" href="javascript:;">修改邮箱</a></p>
+        <i class="close"></i>
+    </div>
+
+    <!-- 记cookie弹窗，邮箱未绑定的时候弹出 -->
+    <div class="yzEmail_box yzEmail_box1 lph-pops" id="sendEmailBox">
+        <div class="head">请验证您的邮箱</div>
+        <div class="box">
+            <span class="tipp"><!-- *邮箱 --></span>
+            <input class="inp" id="sendEmail_input" placeholder="输入您的邮箱" value="">
+            <!-- <strong>验证邮件已发送，请您查收</strong> -->
+            <a class="btn" href="javascript:;" target="_blank" id="sendEmail_btn"><i></i><em>立即验证</em></a>
+            <div class="error"></div>
+        </div>
+        <!-- <div class="boxOk">
+            <strong>验证邮件已发送，请您查收</strong>
+        </div> -->
+        <i class="close"></i>
+    </div>
+
+    <!-- 记cookie弹窗，已发送邮件但未验证 -->
+    <div class="yzEmail_box yzEmail_box2 lph-pops" id="setPwBox">
+        <div class="head">完善账号信息</div>
+        <div class="top">
+            <span>您的账号已经绑定，现在您可以<a href="javascript:;">设置密码</a>以方便用邮箱登录</span>
+        </div>
+        <div class="btm">
+            <input class="inp" type="password" id="" placeholder="输入您的密码" value="">
+            <a class="btn" href="javascript:;" target="_blank" id=""><i></i><em>立即设置</em></a>
+            <a class="clo" href="javascript:;">以后再说</a>
+            <div class="error"></div>
+        </div>
+        <i class="close"></i>
+    </div>
+
+<!-- 申请专栏作者 -->
+<form id="applyAutor" onsubmit="return false">
+    <div class="applyAutor-pop">   
+        <i class="close"></i> 
+        <div class="title">请填写申请人资料</div>
+        <div class="main">
+            <div class="rows clr">
+               <span class="name">姓名</span>
+               <input type="text" id="name" name="MemberAuthorType[name]" value="">
+               <span class="error"></span>
+            </div>
+            <div class="rows clr">
+               <span class="name">电话</span>
+               <input type="text" id="phone" name="MemberAuthorType[phone]" value="">
+               <span class="error"></span>
+            </div>
+            <div class="rows clr">
+               <span class="name">邮箱</span>
+               <input type="text" id="eml" name="MemberAuthorType[email]" value="">
+               <span class="error"></span>
+            </div>
+            <div class="rows clr">
+               <span class="name">微信号</span>
+               <input type="text" id="weixin" name="MemberAuthorType[wechat]" value="">
+               <span class="error"></span>
+            </div>
+            <div class="rows clr">
+               <span class="name">作品链接</span>
+               <input type="text" id="job" name="MemberAuthorType[link]" value="">
+            </div>
+            <div class="rows clr">
+               <span class="name">个人简介</span>
+               <textarea id="description" name="MemberAuthorType[description]"></textarea>
+            </div>
+            <div class="rows clr rows-last">
+                <input type="submit" value="提 交" id="subBtn">
+                <input type="button" value="取 消" id="clsBtn">
+            </div>
+        </div>
+    </div>  
+</form>
+<!--<!-- 公告 -->
+<!--<div class="server-mask"></div>-->
+<!--<div class="server-pop">-->
+<!--    <em id='serCls'></em>-->
+<!--    <div class="tit">关于网站服务器维护的公告</div>-->
+<!--    <div class="main">-->
+<!--        <p>尊敬的雷锋网用户：</p>-->
+<!--        <p>&nbsp;&nbsp;&nbsp;&nbsp;由于网站服务器维护升级，雷锋网将在7月14日22:00-24:00 暂时关闭网站。由此给您带来的不便，我们深表歉意。特此公告!</p>-->
+<!--        <p class="txtR mt10">雷锋网</p>-->
+<!--        <p class="txtR">2017年7月13日</p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<script>
+    // 四站登录
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src=BASE_URL+'/resWeb/home/js/login/yp_login.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<!-- 优路跟踪代码 -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5HDG4H');</script>
+<script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https'){
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else{
+            bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+             
+    })();
+</script>
+
+
+<iframe id="YP_LOGIN_WINDOW" class="YP-LOGIN" scrolling="no" src="./为什么 AI 芯片时代必然到来——从TPU开始的几十倍性能之旅 _ 雷锋网_files/saved_resource.html"></iframe><div id="YP_LOGIN_WINDOW_OVERLAY" class="YP-OVERLAY"><div class="close" title="关闭" style="background-image: url(&quot;https://home.leiphone.com/resWeb/home/images/login/close_03.png&quot;);"></div></div>
+<script type="text/javascript" id="">(function(){var g="https://www.qipus.cn/cmp",h=5021,e=function(){function e(a,b){b&&(a.addEventListener?a.onload=b:a.onreadystatechange=function(){a.readyState in{loaded:1,complete:1}&&(a.onreadystatechange=null,b())})}function k(a,b,f){var d=c.createElement("script");d.type="text/javascript";d.async=!0;d.src=a;e(d,b);f&&(d.onerror=f);a=d;b=c.getElementsByTagName("script")[0]||c.body||c.head;b.parentNode.insertBefore(a,b)}var c=document;k(g+"/cmp.api?r\x3d"+encodeURIComponent(c.referrer||"")+"\x26s\x3d"+
+h+"\x26u\x3d"+encodeURIComponent(c.location.href));window._ycnt_cb=function(a,b){}};e()})();</script>
+</body></html>

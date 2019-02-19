@@ -1,0 +1,14 @@
+
+
+protoc -I=src/caffe/proto/ --cpp_out=src/caffe/proto src/caffe/proto/caffe.proto
+
+
+IV)操作
+proto编译：
+  protoc --proto_path=IMPORT_PATH --cpp_out=DST_DIR --java_out=DST_DIR --python_out=DST_DIR path/to/file.proto
+      这里将给出上述命令的参数解释。
+      1. protoc为Protocol Buffer提供的命令行编译工具。
+      2. --proto_path等同于-I选项，主要用于指定待编译的.proto消息定义文件所在的目录，该选项可以被同时指定多个。
+      3. --cpp_out选项表示生成C++代码，--java_out表示生成Java代码，--python_out则表示生成Python代码，其后的目录为生成后的代码所存放的目录。
+      4. path/to/file.proto表示待编译的消息定义文件。
+      注：对于C++而言，通过Protocol Buffer编译工具，可以将每个.proto文件生成出一对.h和.cc的C++代码文件。生成后的文件可以直接加载到应用程序所在的工程项目中。如：MyMessage.proto生成的文件为MyMessage.pb.h和MyMessage.pb.cc。
