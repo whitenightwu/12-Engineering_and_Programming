@@ -1,9 +1,0 @@
-ncnn 的转换器是读 row-major 的模型，col-major 需要把 weights transpose 下才行，转换器工具还不支持，暂时得手工转...
-简化版opencv是实在要缩减安装包才会用，而且功能也不完整，所以默认禁用的
-
-
-
-github上原始MTCNN是matlab训练的 col-major 模型，所以结果不正确
-
-
-我想在ncnn上部署googlenet，使用的模型是caffe中的bvlc_googlenet.caffemodel（http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel ），配置文件是https://github.com/BVLC/caffe/blob/master/models/bvlc_googlenet/deploy.prototxt ,使用这些文件转化为ncnn的模型为googlenet.param.bin和googlenet.bin，但是在使用这两个文件的时候出错

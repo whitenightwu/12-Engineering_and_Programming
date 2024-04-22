@@ -1,0 +1,12 @@
+
+使用pyinstaller编译为可执行文件exe。
+
+
+在需要打包的包目录下创建setup.py文件和MANIFEST.in（无静态文件可以不用创建）文件。
+
+
+### 打包
+python setup.py sdist
+
+
+

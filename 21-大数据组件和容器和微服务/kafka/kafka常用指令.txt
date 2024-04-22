@@ -1,0 +1,37 @@
+#查看主题
+kafka-topics --list --zookeeper 10.9.30.17:2181
+kafka-topics --list --zookeeper hadoop10.zto:2181/kafka
+
+#创建主题
+kafka-topics --create --zookeeper 10.9.30.17:2181  --replication-factor 1 --partitions 600 --topic ztoai_discharging
+kafka-topics --create --zookeeper hadoop10.zto:2181/kafka --replication-factor 1 --partitions 1 --topic zto_order
+
+#删除主题
+kafka-topics  --delete --zookeeper 10.9.30.17:2181  --topic ztoai_discharging
+kafka-topics --delete --zookeeper hadoop10.zto:2181/kafka --topic zto_order
+
+#创建生产者
+kafka-console-producer --broker-list hadoop10.zto:2181/kafka --topic zto_order
+#通过shell命令发送消息
+kafka-console-producer --broker-list 10.9.30.17:9092 --topic ztoai_discharging
+
+#创建消费者 (从初始值开始消费)
+#通过shell消费消息
+kafka-console-consumer --zookeeper 10.9.30.17:2181  --topic ztoai_discharging --from-beginning
+kafka-console-consumer --zookeeper hadoop10.zto:2181/kafka --topic zto_order --from-beginning
+#创建消费者 (最新消费)
+kafka-console-consumer --zookeeper hadoop10.zto:2181/kafka --topic zto_order 
+
+
+#查看消费位置
+kafka-run-class kafka.tools.ConsumerOffsetChecker --10.9.30.17:2181 --group testGroup
+
+#查看某个Topic的详情
+kafka-topics --topic ztoai_discharging --describe --zookeeper 10.9.30.17:2181
+
+# 修改保存时间
+kafka-topics --zookeeper 10.9.30.17:2181 -topic ztoai_discharging --alter --config retention.ms=172800000
+kafka-topics --zookeeper 10.9.30.17:2181 -topic ztoai_recog_fast_match --alter --config retention.ms=172800000
+kafka-topics --zookeeper 10.9.30.17:2181 -topic ztoai_recog_getway_match --alter --config retention.ms=172800000
+kafka-topics --zookeeper 10.9.30.17:2181 -topic ztoai_recog_match_fast --alter --config retention.ms=172800000
+

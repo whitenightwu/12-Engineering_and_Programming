@@ -1,0 +1,12 @@
+
+## 
+pip3 install --user black==20.8b1 
+
+pip3 install --user isort==5.7.0
+# isort: skip
+
+yapf
+
+Pylint是用于检查Python中错误的工具。它试图强制执行编码标准并查找代码气味。它还可以查找某些类型错误，可以建议有关如何重构特定块的建议，并可以为您提供有关代码复杂性的详细信息。
+
+Flake8是一个Python库，其中包装了PyFlakes，pycodestyle和Ned Batchelder的McCabe脚本 。 这是一个用于检查您的代码库是否符合编码样式(PEP8) ，编程错误(如“已导入但未使用的库”，“未定义的名称”和未缩进的代码)的出色工具包。

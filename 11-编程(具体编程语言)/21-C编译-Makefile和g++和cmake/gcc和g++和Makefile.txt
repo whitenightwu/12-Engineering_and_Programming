@@ -1,0 +1,25 @@
+# Makefile
+
+1）它是和make命令一起配合使用的。
+2）很多大型项目的编译都是通过Makefile来组织的，如果没有Makefile，那很多项目中各种库和代码之间的依赖关系不知会多复杂。
+3）Makefile的组织流程的能力如此之强，不仅可以用来编译项目，还可以用来组织我们平时的一些日常操作。
+
+
+# gcc和g++
+-I：指定第一个寻找头文件的目录
+-L：指定第一个寻找库文件的目录
+-l：表示在库文件目录中寻找指定的动态库文件
+
+上面这句表示在编译hello.c时：
+-I /home/hello/include，表示将/home/hello/include目录作为第一个寻找头文件的目录，寻找的顺序是：/home/hello/include–>/usr/include–>/usr/local/include
+也就是指定优先查找的目录，找不到的话查找默认目录
+
+-L /home/hello/lib，表示将/home/hello/lib目录作为第一个寻找库文件的目录， 寻找的顺序是：/home/hello/lib–>/lib–>/usr/lib–>/usr/local/lib
+同上，也是指定优先查找的目录
+
+-l word , 表示**寻找动态链接库文件**libword.so（也就是文件名去掉前缀和后缀所代表的库文件)
+
+如果 加上编译选项-static，表示寻找静态链接库文件，也就是libword.a
+对于第三方提供的动态链接库(.so），一般将其拷贝到一个lib目录下(/usr/local/lib），或者使用-L来指定其所在目录， 然后使用-l来指定其名称
+
+
